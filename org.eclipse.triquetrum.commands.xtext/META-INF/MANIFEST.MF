@@ -21,14 +21,3 @@ Require-Bundle: org.eclipse.xtext,
  org.eclipse.xtext.generator;bundle-version="2.10.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Import-Package: org.apache.log4j
-Export-Package: org.eclipse.triquetrum.commands.tqcl,
- org.eclipse.triquetrum.commands.validation,
- org.eclipse.triquetrum.commands.parser.antlr,
- org.eclipse.triquetrum.commands.parser.antlr.internal,
- org.eclipse.triquetrum.commands.serializer,
- org.eclipse.triquetrum.commands.generator,
- org.eclipse.triquetrum.commands,
- org.eclipse.triquetrum.commands.tqcl.impl,
- org.eclipse.triquetrum.commands.services,
- org.eclipse.triquetrum.commands.scoping,
- org.eclipse.triquetrum.commands.tqcl.util

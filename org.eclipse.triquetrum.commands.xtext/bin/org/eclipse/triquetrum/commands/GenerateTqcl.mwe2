@@ -21,7 +21,7 @@ Workflow {
 				baseName = "org.eclipse.triquetrum.commands.xtext"
 				rootPath = rootPath
 				runtimeTest = {
-					enabled = false
+					enabled = true
 					src = "src/test/java"
 					srcGen = "src/test/java-gen"
 				}
@@ -30,8 +30,8 @@ Workflow {
 					srcGen = "src/main/java-gen"
 				}
 				eclipsePlugin = {
-					name = ".ui"
-					enabled = false
+					name = "org.eclipse.triquetrum.commands.xtext.ui"
+					enabled = true
 					src = "src/main/java"
 					srcGen = "src/main/java-gen"
 				}
@@ -42,7 +42,8 @@ Workflow {
 					srcGen = "src/test/java-gen"
 				}
 				genericIde = {
-					name = ".ide"
+					name = "org.eclipse.triquetrum.commands.xtext.ide"
+					enabled = true
 					src = "src/main/java"
 					srcGen = "src/main/java-gen"
 				}
