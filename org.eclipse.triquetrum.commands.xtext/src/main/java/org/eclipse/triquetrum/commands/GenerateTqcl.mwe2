@@ -7,32 +7,46 @@ var rootPath = ".."
 
 Workflow {
 
+//	component = org.eclipse.emf.mwe.utils.DirectoryCleaner
+//	{
+//		directory = ""
+//	}
 	component = XtextGenerator {
+		cleaner = {
+			enabled = true
+		}
+
 		configuration = {
 			project = StandardProjectConfig {
 				baseName = "org.eclipse.triquetrum.commands.xtext"
 				rootPath = rootPath
 				runtimeTest = {
+					enabled = false
 					src = "src/test/java"
-					srcGen="src/test/java-gen"
-					
+					srcGen = "src/test/java-gen"
 				}
-				runtime = 
-				{
+				runtime = {
 					src = "src/main/java"
-					srcGen="src/main/java-gen"
+					srcGen = "src/main/java-gen"
 				}
 				eclipsePlugin = {
-					enabled = true
+					name = ".ui"
+					enabled = false
 					src = "src/main/java"
-					srcGen="src/main/java-gen"
+					srcGen = "src/main/java-gen"
 				}
-				
+
 				eclipsePluginTest = {
-					enabled = true
+					enabled = false
 					src = "src/test/java"
-					srcGen="src/test/java-gen"
+					srcGen = "src/test/java-gen"
 				}
+				genericIde = {
+					name = ".ide"
+					src = "src/main/java"
+					srcGen = "src/main/java-gen"
+				}
+
 				createEclipseMetaData = true
 			}
 
@@ -45,8 +59,14 @@ Workflow {
 		language = StandardLanguage {
 			name = "org.eclipse.triquetrum.commands.Tqcl"
 			fileExtensions = "tdcl"
+			emfGenerator = {
+				javaModelDirectory = "org.eclipse.triquetrum.commands.xtext/src/main/java-gen"
+			}
+			
+
 			generator = generator.GeneratorFragment2 {
 				generateStub = true
+				generateXtendStub = false
 			}
 
 			serializer = {
@@ -64,6 +84,9 @@ Workflow {
 				generateStub = true
 				generateXtendStub = false
 			}
+
+			
+
 		}
 	}
 }
