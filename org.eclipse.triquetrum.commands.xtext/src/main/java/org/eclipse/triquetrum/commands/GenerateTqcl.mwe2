@@ -4,6 +4,7 @@ import org.eclipse.xtext.xtext.generator.*
 import org.eclipse.xtext.xtext.generator.model.project.*
 
 var rootPath = ".."
+var basename = "org.eclipse.triquetrum.commands.xtext"
 
 Workflow {
 
@@ -18,34 +19,36 @@ Workflow {
 
 		configuration = {
 			project = StandardProjectConfig {
-				baseName = "org.eclipse.triquetrum.commands.xtext"
+				baseName = "${basename}"
 				rootPath = rootPath
 				runtimeTest = {
+					name ="${basename}.tests"
 					enabled = true
-					src = "src/test/java"
-					srcGen = "src/test/java-gen"
+					src = "../${basename}.tests/src/test/java"
+					srcGen = "../${basename}.tests/src/test/java-gen"
 				}
 				runtime = {
 					src = "src/main/java"
 					srcGen = "src/main/java-gen"
 				}
 				eclipsePlugin = {
-					name = "org.eclipse.triquetrum.commands.xtext.ui"
+					name ="${basename}.ui"
 					enabled = true
-					src = "src/main/java"
-					srcGen = "src/main/java-gen"
+					src = "../${basename}.ui/src/main/java"
+					srcGen = "../${basename}.ui/src/main/java-gen"
 				}
 
 				eclipsePluginTest = {
+					name ="${basename}.ui.tests"
 					enabled = false
-					src = "src/test/java"
-					srcGen = "src/test/java-gen"
+					src = "../${basename}.ui.tests/src/test/java"
+					srcGen = "../${basename}.ui.tests/src/test/java-gen"
 				}
 				genericIde = {
-					name = "org.eclipse.triquetrum.commands.xtext.ide"
 					enabled = true
-					src = "src/main/java"
-					srcGen = "src/main/java-gen"
+					name ="${basename}.ide"
+					src = "../${basename}.ide/src/main/java"
+					srcGen = "../${basename}.ide/src/main/java-gen"
 				}
 
 				createEclipseMetaData = true

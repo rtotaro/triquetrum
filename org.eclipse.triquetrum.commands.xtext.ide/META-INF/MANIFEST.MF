@@ -5,4 +5,9 @@ Bundle-SymbolicName: org.eclipse.triquetrum.commands.xtext.ide;singleton:=true
 Bundle-Version: 0.0.1.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
+Export-Package: org.eclipse.triquetrum.commands.ide.contentassist.antlr,
+ org.eclipse.triquetrum.commands.ide.contentassist.antlr.internal
+Require-Bundle: org.eclipse.xtext.ide;bundle-version="2.10.0",
+ org.eclipse.triquetrum.commands.xtext;bundle-version="1.0.0",
+ org.eclipse.xtext.xbase.ide;bundle-version="2.10.0"
 
