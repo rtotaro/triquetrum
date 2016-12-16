@@ -9,6 +9,4 @@ Require-Bundle: org.eclipse.triquetrum.commands.xtext,
  org.eclipse.xtext.ide,
  org.eclipse.xtext.xbase.ide
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: org.eclipse.triquetrum.commands.ide.contentassist.antlr,
- org.eclipse.triquetrum.commands.ide.contentassist.antlr.internal
 

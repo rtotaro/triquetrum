@@ -21,7 +21,4 @@ Require-Bundle: org.eclipse.triquetrum.commands.xtext,
  org.eclipse.xtext.common.types.ui
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: org.eclipse.triquetrum.commands.ui.contentassist,
- org.eclipse.triquetrum.commands.xtext.ui.internal,
- org.eclipse.triquetrum.commands.ui.quickfix
 Bundle-Activator: org.eclipse.triquetrum.commands.xtext.ui.internal.XtextActivator
