@@ -36,6 +36,7 @@ public class TqclParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getCommandAccess().getAlternatives_0(), "rule__Command__Alternatives_0");
+					put(grammarAccess.getNamedObjAccess().getNameAlternatives_0(), "rule__NamedObj__NameAlternatives_0");
 					put(grammarAccess.getJvmTypeReferenceAccess().getAlternatives(), "rule__JvmTypeReference__Alternatives");
 					put(grammarAccess.getJvmArgumentTypeReferenceAccess().getAlternatives(), "rule__JvmArgumentTypeReference__Alternatives");
 					put(grammarAccess.getJvmWildcardTypeReferenceAccess().getAlternatives_2(), "rule__JvmWildcardTypeReference__Alternatives_2");
@@ -81,7 +82,7 @@ public class TqclParser extends AbstractContentAssistParser {
 					put(grammarAccess.getQualifiedNameInStaticImportAccess().getGroup(), "rule__QualifiedNameInStaticImport__Group__0");
 					put(grammarAccess.getTriquetrumScriptAccess().getCommandsAssignment(), "rule__TriquetrumScript__CommandsAssignment");
 					put(grammarAccess.getInsertAccess().getObjAssignment_1(), "rule__Insert__ObjAssignment_1");
-					put(grammarAccess.getInsertAccess().getAliasAssignment_2_1(), "rule__Insert__AliasAssignment_2_1");
+					put(grammarAccess.getInsertAccess().getNameAssignment_2_1(), "rule__Insert__NameAssignment_2_1");
 					put(grammarAccess.getInsertAccess().getParametersAssignment_3_1(), "rule__Insert__ParametersAssignment_3_1");
 					put(grammarAccess.getInsertAccess().getParametersAssignment_3_2_1(), "rule__Insert__ParametersAssignment_3_2_1");
 					put(grammarAccess.getParameterAccess().getValueAssignment_2(), "rule__Parameter__ValueAssignment_2");

@@ -15,7 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link org.eclipse.triquetrum.commands.tqcl.Insert#getObj <em>Obj</em>}</li>
- *   <li>{@link org.eclipse.triquetrum.commands.tqcl.Insert#getAlias <em>Alias</em>}</li>
+ *   <li>{@link org.eclipse.triquetrum.commands.tqcl.Insert#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.triquetrum.commands.tqcl.Insert#getParameters <em>Parameters</em>}</li>
  * </ul>
  *
@@ -52,30 +52,30 @@ public interface Insert extends Command
   void setObj(NamedObj value);
 
   /**
-   * Returns the value of the '<em><b>Alias</b></em>' containment reference.
+   * Returns the value of the '<em><b>Name</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Alias</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Name</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Alias</em>' containment reference.
-   * @see #setAlias(NamedObj)
-   * @see org.eclipse.triquetrum.commands.tqcl.TqclPackage#getInsert_Alias()
+   * @return the value of the '<em>Name</em>' containment reference.
+   * @see #setName(NamedObj)
+   * @see org.eclipse.triquetrum.commands.tqcl.TqclPackage#getInsert_Name()
    * @model containment="true"
    * @generated
    */
-  NamedObj getAlias();
+  NamedObj getName();
 
   /**
-   * Sets the value of the '{@link org.eclipse.triquetrum.commands.tqcl.Insert#getAlias <em>Alias</em>}' containment reference.
+   * Sets the value of the '{@link org.eclipse.triquetrum.commands.tqcl.Insert#getName <em>Name</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Alias</em>' containment reference.
-   * @see #getAlias()
+   * @param value the new value of the '<em>Name</em>' containment reference.
+   * @see #getName()
    * @generated
    */
-  void setAlias(NamedObj value);
+  void setName(NamedObj value);
 
   /**
    * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.

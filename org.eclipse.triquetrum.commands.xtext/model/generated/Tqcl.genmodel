@@ -12,7 +12,7 @@
     <genClasses ecoreClass="Tqcl.ecore#//Command"/>
     <genClasses ecoreClass="Tqcl.ecore#//Insert">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Tqcl.ecore#//Insert/obj"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Tqcl.ecore#//Insert/alias"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Tqcl.ecore#//Insert/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Tqcl.ecore#//Insert/parameters"/>
     </genClasses>
     <genClasses ecoreClass="Tqcl.ecore#//Parameter"/>

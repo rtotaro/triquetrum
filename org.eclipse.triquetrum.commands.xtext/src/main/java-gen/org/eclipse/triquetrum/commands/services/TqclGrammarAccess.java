@@ -72,8 +72,8 @@ public class TqclGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cObjNamedObjParserRuleCall_1_0 = (RuleCall)cObjAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Keyword cAsKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cAliasAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cAliasNamedObjParserRuleCall_2_1_0 = (RuleCall)cAliasAssignment_2_1.eContents().get(0);
+		private final Assignment cNameAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cNameNamedObjParserRuleCall_2_1_0 = (RuleCall)cNameAssignment_2_1.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cWithKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Assignment cParametersAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
@@ -84,10 +84,10 @@ public class TqclGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cParametersParameterParserRuleCall_3_2_1_0 = (RuleCall)cParametersAssignment_3_2_1.eContents().get(0);
 		
 		//Insert:
-		//	"insert" obj=NamedObj ("as" alias=NamedObj)? ("with" parameters+=Parameter ("," parameters+=Parameter)*)?;
+		//	"insert" obj=NamedObj ("as" name=NamedObj)? ("with" parameters+=Parameter ("," parameters+=Parameter)*)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"insert" obj=NamedObj ("as" alias=NamedObj)? ("with" parameters+=Parameter ("," parameters+=Parameter)*)?
+		//"insert" obj=NamedObj ("as" name=NamedObj)? ("with" parameters+=Parameter ("," parameters+=Parameter)*)?
 		public Group getGroup() { return cGroup; }
 		
 		//"insert"
@@ -99,17 +99,17 @@ public class TqclGrammarAccess extends AbstractGrammarElementFinder {
 		//NamedObj
 		public RuleCall getObjNamedObjParserRuleCall_1_0() { return cObjNamedObjParserRuleCall_1_0; }
 		
-		//("as" alias=NamedObj)?
+		//("as" name=NamedObj)?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//"as"
 		public Keyword getAsKeyword_2_0() { return cAsKeyword_2_0; }
 		
-		//alias=NamedObj
-		public Assignment getAliasAssignment_2_1() { return cAliasAssignment_2_1; }
+		//name=NamedObj
+		public Assignment getNameAssignment_2_1() { return cNameAssignment_2_1; }
 		
 		//NamedObj
-		public RuleCall getAliasNamedObjParserRuleCall_2_1_0() { return cAliasNamedObjParserRuleCall_2_1_0; }
+		public RuleCall getNameNamedObjParserRuleCall_2_1_0() { return cNameNamedObjParserRuleCall_2_1_0; }
 		
 		//("with" parameters+=Parameter ("," parameters+=Parameter)*)?
 		public Group getGroup_3() { return cGroup_3; }
@@ -165,17 +165,25 @@ public class TqclGrammarAccess extends AbstractGrammarElementFinder {
 	public class NamedObjElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.triquetrum.commands.Tqcl.NamedObj");
 		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cNameQualifiedNameParserRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
+		private final Alternatives cNameAlternatives_0 = (Alternatives)cNameAssignment.eContents().get(0);
+		private final RuleCall cNameQualifiedNameParserRuleCall_0_0 = (RuleCall)cNameAlternatives_0.eContents().get(0);
+		private final RuleCall cNameSTRINGTerminalRuleCall_0_1 = (RuleCall)cNameAlternatives_0.eContents().get(1);
 		
 		//NamedObj:
-		//	name=QualifiedName;
+		//	name=(QualifiedName | STRING);
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=QualifiedName
+		//name=(QualifiedName | STRING)
 		public Assignment getNameAssignment() { return cNameAssignment; }
 		
+		//(QualifiedName | STRING)
+		public Alternatives getNameAlternatives_0() { return cNameAlternatives_0; }
+		
 		//QualifiedName
-		public RuleCall getNameQualifiedNameParserRuleCall_0() { return cNameQualifiedNameParserRuleCall_0; }
+		public RuleCall getNameQualifiedNameParserRuleCall_0_0() { return cNameQualifiedNameParserRuleCall_0_0; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_0_1() { return cNameSTRINGTerminalRuleCall_0_1; }
 	}
 	public class ConnectElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.triquetrum.commands.Tqcl.Connect");
@@ -286,7 +294,7 @@ public class TqclGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Insert:
-	//	"insert" obj=NamedObj ("as" alias=NamedObj)? ("with" parameters+=Parameter ("," parameters+=Parameter)*)?;
+	//	"insert" obj=NamedObj ("as" name=NamedObj)? ("with" parameters+=Parameter ("," parameters+=Parameter)*)?;
 	public InsertElements getInsertAccess() {
 		return pInsert;
 	}
@@ -306,7 +314,7 @@ public class TqclGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//NamedObj:
-	//	name=QualifiedName;
+	//	name=(QualifiedName | STRING);
 	public NamedObjElements getNamedObjAccess() {
 		return pNamedObj;
 	}

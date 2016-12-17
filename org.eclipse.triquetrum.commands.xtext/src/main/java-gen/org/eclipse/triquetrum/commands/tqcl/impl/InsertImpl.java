@@ -32,7 +32,7 @@ import org.eclipse.triquetrum.commands.tqcl.TqclPackage;
  * </p>
  * <ul>
  *   <li>{@link org.eclipse.triquetrum.commands.tqcl.impl.InsertImpl#getObj <em>Obj</em>}</li>
- *   <li>{@link org.eclipse.triquetrum.commands.tqcl.impl.InsertImpl#getAlias <em>Alias</em>}</li>
+ *   <li>{@link org.eclipse.triquetrum.commands.tqcl.impl.InsertImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.triquetrum.commands.tqcl.impl.InsertImpl#getParameters <em>Parameters</em>}</li>
  * </ul>
  *
@@ -51,14 +51,14 @@ public class InsertImpl extends CommandImpl implements Insert
   protected NamedObj obj;
 
   /**
-   * The cached value of the '{@link #getAlias() <em>Alias</em>}' containment reference.
+   * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAlias()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected NamedObj alias;
+  protected NamedObj name;
 
   /**
    * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
@@ -144,9 +144,9 @@ public class InsertImpl extends CommandImpl implements Insert
    * <!-- end-user-doc -->
    * @generated
    */
-  public NamedObj getAlias()
+  public NamedObj getName()
   {
-    return alias;
+    return name;
   }
 
   /**
@@ -154,13 +154,13 @@ public class InsertImpl extends CommandImpl implements Insert
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetAlias(NamedObj newAlias, NotificationChain msgs)
+  public NotificationChain basicSetName(NamedObj newName, NotificationChain msgs)
   {
-    NamedObj oldAlias = alias;
-    alias = newAlias;
+    NamedObj oldName = name;
+    name = newName;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TqclPackage.INSERT__ALIAS, oldAlias, newAlias);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TqclPackage.INSERT__NAME, oldName, newName);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -171,20 +171,20 @@ public class InsertImpl extends CommandImpl implements Insert
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setAlias(NamedObj newAlias)
+  public void setName(NamedObj newName)
   {
-    if (newAlias != alias)
+    if (newName != name)
     {
       NotificationChain msgs = null;
-      if (alias != null)
-        msgs = ((InternalEObject)alias).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TqclPackage.INSERT__ALIAS, null, msgs);
-      if (newAlias != null)
-        msgs = ((InternalEObject)newAlias).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TqclPackage.INSERT__ALIAS, null, msgs);
-      msgs = basicSetAlias(newAlias, msgs);
+      if (name != null)
+        msgs = ((InternalEObject)name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TqclPackage.INSERT__NAME, null, msgs);
+      if (newName != null)
+        msgs = ((InternalEObject)newName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TqclPackage.INSERT__NAME, null, msgs);
+      msgs = basicSetName(newName, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TqclPackage.INSERT__ALIAS, newAlias, newAlias));
+      eNotify(new ENotificationImpl(this, Notification.SET, TqclPackage.INSERT__NAME, newName, newName));
   }
 
   /**
@@ -213,8 +213,8 @@ public class InsertImpl extends CommandImpl implements Insert
     {
       case TqclPackage.INSERT__OBJ:
         return basicSetObj(null, msgs);
-      case TqclPackage.INSERT__ALIAS:
-        return basicSetAlias(null, msgs);
+      case TqclPackage.INSERT__NAME:
+        return basicSetName(null, msgs);
       case TqclPackage.INSERT__PARAMETERS:
         return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
     }
@@ -233,8 +233,8 @@ public class InsertImpl extends CommandImpl implements Insert
     {
       case TqclPackage.INSERT__OBJ:
         return getObj();
-      case TqclPackage.INSERT__ALIAS:
-        return getAlias();
+      case TqclPackage.INSERT__NAME:
+        return getName();
       case TqclPackage.INSERT__PARAMETERS:
         return getParameters();
     }
@@ -255,8 +255,8 @@ public class InsertImpl extends CommandImpl implements Insert
       case TqclPackage.INSERT__OBJ:
         setObj((NamedObj)newValue);
         return;
-      case TqclPackage.INSERT__ALIAS:
-        setAlias((NamedObj)newValue);
+      case TqclPackage.INSERT__NAME:
+        setName((NamedObj)newValue);
         return;
       case TqclPackage.INSERT__PARAMETERS:
         getParameters().clear();
@@ -279,8 +279,8 @@ public class InsertImpl extends CommandImpl implements Insert
       case TqclPackage.INSERT__OBJ:
         setObj((NamedObj)null);
         return;
-      case TqclPackage.INSERT__ALIAS:
-        setAlias((NamedObj)null);
+      case TqclPackage.INSERT__NAME:
+        setName((NamedObj)null);
         return;
       case TqclPackage.INSERT__PARAMETERS:
         getParameters().clear();
@@ -301,8 +301,8 @@ public class InsertImpl extends CommandImpl implements Insert
     {
       case TqclPackage.INSERT__OBJ:
         return obj != null;
-      case TqclPackage.INSERT__ALIAS:
-        return alias != null;
+      case TqclPackage.INSERT__NAME:
+        return name != null;
       case TqclPackage.INSERT__PARAMETERS:
         return parameters != null && !parameters.isEmpty();
     }

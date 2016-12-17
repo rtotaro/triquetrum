@@ -159,7 +159,7 @@ public abstract class AbstractTqclSemanticSequencer extends XtypeSemanticSequenc
 	 *     Insert returns Insert
 	 *
 	 * Constraint:
-	 *     (obj=NamedObj alias=NamedObj? (parameters+=Parameter parameters+=Parameter*)?)
+	 *     (obj=NamedObj name=NamedObj? (parameters+=Parameter parameters+=Parameter*)?)
 	 */
 	protected void sequence_Insert(ISerializationContext context, Insert semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -171,16 +171,10 @@ public abstract class AbstractTqclSemanticSequencer extends XtypeSemanticSequenc
 	 *     NamedObj returns NamedObj
 	 *
 	 * Constraint:
-	 *     name=QualifiedName
+	 *     (name=QualifiedName | name=STRING)
 	 */
 	protected void sequence_NamedObj(ISerializationContext context, NamedObj semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, TqclPackage.Literals.NAMED_OBJ__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TqclPackage.Literals.NAMED_OBJ__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getNamedObjAccess().getNameQualifiedNameParserRuleCall_0(), semanticObject.getName());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -189,19 +183,10 @@ public abstract class AbstractTqclSemanticSequencer extends XtypeSemanticSequenc
 	 *     Parameter returns NamedObj
 	 *
 	 * Constraint:
-	 *     (name=QualifiedName value=STRING)
+	 *     ((name=QualifiedName | name=STRING) value=STRING)
 	 */
 	protected void sequence_NamedObj_Parameter(ISerializationContext context, NamedObj semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, TqclPackage.Literals.NAMED_OBJ__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TqclPackage.Literals.NAMED_OBJ__NAME));
-			if (transientValues.isValueTransient(semanticObject, TqclPackage.Literals.NAMED_OBJ__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TqclPackage.Literals.NAMED_OBJ__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getNamedObjAccess().getNameQualifiedNameParserRuleCall_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getParameterAccess().getValueSTRINGTerminalRuleCall_2_0(), semanticObject.getValue());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

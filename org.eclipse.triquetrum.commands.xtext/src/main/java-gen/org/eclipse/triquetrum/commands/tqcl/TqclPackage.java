@@ -124,13 +124,13 @@ public interface TqclPackage extends EPackage
   int INSERT__OBJ = COMMAND_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Alias</b></em>' containment reference.
+   * The feature id for the '<em><b>Name</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INSERT__ALIAS = COMMAND_FEATURE_COUNT + 1;
+  int INSERT__NAME = COMMAND_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -297,15 +297,15 @@ public interface TqclPackage extends EPackage
   EReference getInsert_Obj();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.eclipse.triquetrum.commands.tqcl.Insert#getAlias <em>Alias</em>}'.
+   * Returns the meta object for the containment reference '{@link org.eclipse.triquetrum.commands.tqcl.Insert#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Alias</em>'.
-   * @see org.eclipse.triquetrum.commands.tqcl.Insert#getAlias()
+   * @return the meta object for the containment reference '<em>Name</em>'.
+   * @see org.eclipse.triquetrum.commands.tqcl.Insert#getName()
    * @see #getInsert()
    * @generated
    */
-  EReference getInsert_Alias();
+  EReference getInsert_Name();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.eclipse.triquetrum.commands.tqcl.Insert#getParameters <em>Parameters</em>}'.
@@ -462,12 +462,12 @@ public interface TqclPackage extends EPackage
     EReference INSERT__OBJ = eINSTANCE.getInsert_Obj();
 
     /**
-     * The meta object literal for the '<em><b>Alias</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Name</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference INSERT__ALIAS = eINSTANCE.getInsert_Alias();
+    EReference INSERT__NAME = eINSTANCE.getInsert_Name();
 
     /**
      * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.

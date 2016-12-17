@@ -10,14 +10,14 @@ Command:
 	(Insert|Connect)";";
 
 Insert:
-	"insert" obj=NamedObj ("as" alias=NamedObj)? ("with" parameters += (Parameter) ("," parameters+=Parameter)*)?;
+	"insert" obj=NamedObj ("as" name=NamedObj)? ("with" parameters += (Parameter) ("," parameters+=Parameter)*)?;
 
 Parameter:
 	NamedObj "=" value=STRING;
 
 
 NamedObj:
-	name = QualifiedName;  
+	name = (QualifiedName|STRING);  
  
  
 Connect:

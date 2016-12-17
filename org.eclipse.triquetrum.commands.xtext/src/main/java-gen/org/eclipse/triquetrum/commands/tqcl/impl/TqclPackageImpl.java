@@ -187,7 +187,7 @@ public class TqclPackageImpl extends EPackageImpl implements TqclPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getInsert_Alias()
+  public EReference getInsert_Name()
   {
     return (EReference)insertEClass.getEStructuralFeatures().get(1);
   }
@@ -309,7 +309,7 @@ public class TqclPackageImpl extends EPackageImpl implements TqclPackage
 
     insertEClass = createEClass(INSERT);
     createEReference(insertEClass, INSERT__OBJ);
-    createEReference(insertEClass, INSERT__ALIAS);
+    createEReference(insertEClass, INSERT__NAME);
     createEReference(insertEClass, INSERT__PARAMETERS);
 
     parameterEClass = createEClass(PARAMETER);
@@ -364,7 +364,7 @@ public class TqclPackageImpl extends EPackageImpl implements TqclPackage
 
     initEClass(insertEClass, Insert.class, "Insert", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getInsert_Obj(), this.getNamedObj(), null, "obj", null, 0, 1, Insert.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getInsert_Alias(), this.getNamedObj(), null, "alias", null, 0, 1, Insert.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInsert_Name(), this.getNamedObj(), null, "name", null, 0, 1, Insert.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getInsert_Parameters(), this.getParameter(), null, "parameters", null, 0, -1, Insert.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

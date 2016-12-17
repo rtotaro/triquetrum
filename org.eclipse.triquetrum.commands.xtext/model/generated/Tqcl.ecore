@@ -10,7 +10,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Insert" eSuperTypes="#//Command">
     <eStructuralFeatures xsi:type="ecore:EReference" name="obj" eType="#//NamedObj"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="alias" eType="#//NamedObj"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//NamedObj"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
         eType="#//Parameter" containment="true"/>

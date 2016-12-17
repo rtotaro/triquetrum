@@ -603,6 +603,27 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__NamedObj__NameAlternatives_0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getNamedObjAccess().getNameQualifiedNameParserRuleCall_0_0()); }
+		ruleQualifiedName
+		{ after(grammarAccess.getNamedObjAccess().getNameQualifiedNameParserRuleCall_0_0()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getNamedObjAccess().getNameSTRINGTerminalRuleCall_0_1()); }
+		RULE_STRING
+		{ after(grammarAccess.getNamedObjAccess().getNameSTRINGTerminalRuleCall_0_1()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__JvmTypeReference__Alternatives
 	@init {
 		int stackSize = keepStackSize();
@@ -920,9 +941,9 @@ rule__Insert__Group_2__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getInsertAccess().getAliasAssignment_2_1()); }
-	(rule__Insert__AliasAssignment_2_1)
-	{ after(grammarAccess.getInsertAccess().getAliasAssignment_2_1()); }
+	{ before(grammarAccess.getInsertAccess().getNameAssignment_2_1()); }
+	(rule__Insert__NameAssignment_2_1)
+	{ after(grammarAccess.getInsertAccess().getNameAssignment_2_1()); }
 )
 ;
 finally {
@@ -3147,15 +3168,15 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Insert__AliasAssignment_2_1
+rule__Insert__NameAssignment_2_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getInsertAccess().getAliasNamedObjParserRuleCall_2_1_0()); }
+		{ before(grammarAccess.getInsertAccess().getNameNamedObjParserRuleCall_2_1_0()); }
 		ruleNamedObj
-		{ after(grammarAccess.getInsertAccess().getAliasNamedObjParserRuleCall_2_1_0()); }
+		{ after(grammarAccess.getInsertAccess().getNameNamedObjParserRuleCall_2_1_0()); }
 	)
 ;
 finally {
@@ -3213,9 +3234,9 @@ rule__NamedObj__NameAssignment
 	}
 :
 	(
-		{ before(grammarAccess.getNamedObjAccess().getNameQualifiedNameParserRuleCall_0()); }
-		ruleQualifiedName
-		{ after(grammarAccess.getNamedObjAccess().getNameQualifiedNameParserRuleCall_0()); }
+		{ before(grammarAccess.getNamedObjAccess().getNameAlternatives_0()); }
+		(rule__NamedObj__NameAlternatives_0)
+		{ after(grammarAccess.getNamedObjAccess().getNameAlternatives_0()); }
 	)
 ;
 finally {

@@ -185,17 +185,17 @@ ruleInsert returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getInsertAccess().getAliasNamedObjParserRuleCall_2_1_0());
+						newCompositeNode(grammarAccess.getInsertAccess().getNameNamedObjParserRuleCall_2_1_0());
 					}
-					lv_alias_3_0=ruleNamedObj
+					lv_name_3_0=ruleNamedObj
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getInsertRule());
 						}
 						set(
 							$current,
-							"alias",
-							lv_alias_3_0,
+							"name",
+							lv_name_3_0,
 							"org.eclipse.triquetrum.commands.Tqcl.NamedObj");
 						afterParserOrEnumRuleCall();
 					}
@@ -321,21 +321,38 @@ ruleNamedObj returns [EObject current=null]
 }:
 	(
 		(
-			{
-				newCompositeNode(grammarAccess.getNamedObjAccess().getNameQualifiedNameParserRuleCall_0());
-			}
-			lv_name_0_0=ruleQualifiedName
-			{
-				if ($current==null) {
-					$current = createModelElementForParent(grammarAccess.getNamedObjRule());
+			(
+				{
+					newCompositeNode(grammarAccess.getNamedObjAccess().getNameQualifiedNameParserRuleCall_0_0());
 				}
-				set(
-					$current,
-					"name",
-					lv_name_0_0,
-					"org.eclipse.xtext.xbase.Xtype.QualifiedName");
-				afterParserOrEnumRuleCall();
-			}
+				lv_name_0_1=ruleQualifiedName
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getNamedObjRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_0_1,
+						"org.eclipse.xtext.xbase.Xtype.QualifiedName");
+					afterParserOrEnumRuleCall();
+				}
+				    |
+				lv_name_0_2=RULE_STRING
+				{
+					newLeafNode(lv_name_0_2, grammarAccess.getNamedObjAccess().getNameSTRINGTerminalRuleCall_0_1());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getNamedObjRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_0_2,
+						"org.eclipse.xtext.xbase.Xtype.STRING");
+				}
+			)
 		)
 	)
 ;
