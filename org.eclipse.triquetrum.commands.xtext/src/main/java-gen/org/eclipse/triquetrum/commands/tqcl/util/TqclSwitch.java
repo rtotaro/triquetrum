@@ -106,6 +106,7 @@ public class TqclSwitch<T> extends Switch<T>
       {
         NamedObj namedObj = (NamedObj)theEObject;
         T result = caseNamedObj(namedObj);
+        if (result == null) result = caseParameter(namedObj);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }

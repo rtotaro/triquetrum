@@ -8,7 +8,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.triquetrum.commands.tqcl.NamedObj;
 import org.eclipse.triquetrum.commands.tqcl.TqclPackage;
@@ -21,13 +20,34 @@ import org.eclipse.triquetrum.commands.tqcl.TqclPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.eclipse.triquetrum.commands.tqcl.impl.NamedObjImpl#getValue <em>Value</em>}</li>
  *   <li>{@link org.eclipse.triquetrum.commands.tqcl.impl.NamedObjImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class NamedObjImpl extends MinimalEObjectImpl.Container implements NamedObj
+public class NamedObjImpl extends ParameterImpl implements NamedObj
 {
+  /**
+   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValue()
+   * @generated
+   * @ordered
+   */
+  protected static final String VALUE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValue()
+   * @generated
+   * @ordered
+   */
+  protected String value = VALUE_EDEFAULT;
+
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -74,6 +94,29 @@ public class NamedObjImpl extends MinimalEObjectImpl.Container implements NamedO
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getValue()
+  {
+    return value;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setValue(String newValue)
+  {
+    String oldValue = value;
+    value = newValue;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TqclPackage.NAMED_OBJ__VALUE, oldValue, value));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getName()
   {
     return name;
@@ -102,6 +145,8 @@ public class NamedObjImpl extends MinimalEObjectImpl.Container implements NamedO
   {
     switch (featureID)
     {
+      case TqclPackage.NAMED_OBJ__VALUE:
+        return getValue();
       case TqclPackage.NAMED_OBJ__NAME:
         return getName();
     }
@@ -118,6 +163,9 @@ public class NamedObjImpl extends MinimalEObjectImpl.Container implements NamedO
   {
     switch (featureID)
     {
+      case TqclPackage.NAMED_OBJ__VALUE:
+        setValue((String)newValue);
+        return;
       case TqclPackage.NAMED_OBJ__NAME:
         setName((String)newValue);
         return;
@@ -135,6 +183,9 @@ public class NamedObjImpl extends MinimalEObjectImpl.Container implements NamedO
   {
     switch (featureID)
     {
+      case TqclPackage.NAMED_OBJ__VALUE:
+        setValue(VALUE_EDEFAULT);
+        return;
       case TqclPackage.NAMED_OBJ__NAME:
         setName(NAME_EDEFAULT);
         return;
@@ -152,6 +203,8 @@ public class NamedObjImpl extends MinimalEObjectImpl.Container implements NamedO
   {
     switch (featureID)
     {
+      case TqclPackage.NAMED_OBJ__VALUE:
+        return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
       case TqclPackage.NAMED_OBJ__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
@@ -169,7 +222,9 @@ public class NamedObjImpl extends MinimalEObjectImpl.Container implements NamedO
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
+    result.append(" (value: ");
+    result.append(value);
+    result.append(", name: ");
     result.append(name);
     result.append(')');
     return result.toString();

@@ -54,11 +54,15 @@ public abstract class AbstractTqclSemanticSequencer extends XtypeSemanticSequenc
 				sequence_Insert(context, (Insert) semanticObject); 
 				return; 
 			case TqclPackage.NAMED_OBJ:
-				sequence_NamedObj(context, (NamedObj) semanticObject); 
-				return; 
-			case TqclPackage.PARAMETER:
-				sequence_Parameter(context, (org.eclipse.triquetrum.commands.tqcl.Parameter) semanticObject); 
-				return; 
+				if (rule == grammarAccess.getNamedObjRule()) {
+					sequence_NamedObj(context, (NamedObj) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getParameterRule()) {
+					sequence_NamedObj_Parameter(context, (NamedObj) semanticObject); 
+					return; 
+				}
+				else break;
 			case TqclPackage.TRIQUETRUM_SCRIPT:
 				sequence_TriquetrumScript(context, (TriquetrumScript) semanticObject); 
 				return; 
@@ -155,7 +159,7 @@ public abstract class AbstractTqclSemanticSequencer extends XtypeSemanticSequenc
 	 *     Insert returns Insert
 	 *
 	 * Constraint:
-	 *     (obj=QualifiedName alias=NamedObj? parameters+=Parameter*)
+	 *     (obj=NamedObj alias=NamedObj? (parameters+=Parameter parameters+=Parameter*)?)
 	 */
 	protected void sequence_Insert(ISerializationContext context, Insert semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -182,20 +186,20 @@ public abstract class AbstractTqclSemanticSequencer extends XtypeSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     Parameter returns Parameter
+	 *     Parameter returns NamedObj
 	 *
 	 * Constraint:
 	 *     (name=QualifiedName value=STRING)
 	 */
-	protected void sequence_Parameter(ISerializationContext context, org.eclipse.triquetrum.commands.tqcl.Parameter semanticObject) {
+	protected void sequence_NamedObj_Parameter(ISerializationContext context, NamedObj semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, TqclPackage.Literals.PARAMETER__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TqclPackage.Literals.PARAMETER__NAME));
-			if (transientValues.isValueTransient(semanticObject, TqclPackage.Literals.PARAMETER__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TqclPackage.Literals.PARAMETER__VALUE));
+			if (transientValues.isValueTransient(semanticObject, TqclPackage.Literals.NAMED_OBJ__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TqclPackage.Literals.NAMED_OBJ__NAME));
+			if (transientValues.isValueTransient(semanticObject, TqclPackage.Literals.NAMED_OBJ__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TqclPackage.Literals.NAMED_OBJ__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getParameterAccess().getNameQualifiedNameParserRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getNamedObjAccess().getNameQualifiedNameParserRuleCall_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getParameterAccess().getValueSTRINGTerminalRuleCall_2_0(), semanticObject.getValue());
 		feeder.finish();
 	}

@@ -18,8 +18,14 @@ Require-Bundle: org.eclipse.triquetrum.commands.xtext,
  org.eclipse.xtend.lib;resolution:=optional,
  org.eclipse.xtext.xbase.lib,
  org.eclipse.xtext.xbase.ui,
- org.eclipse.xtext.common.types.ui
-Import-Package: org.apache.log4j
+ org.eclipse.xtext.common.types.ui,
+ org.eclipse.triquetrum.workflow.editor;bundle-version="0.1.0",
+ org.eclipse.graphiti;bundle-version="0.13.0",
+ org.eclipse.triquetrum.workflow.model;bundle-version="0.1.0",
+ ptolemy.core;bundle-version="11.0.0",
+ org.ptolemy.commons;bundle-version="11.0.0"
+Import-Package: org.apache.commons.lang;version="2.6.0",
+ org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Activator: org.eclipse.triquetrum.commands.xtext.ui.internal.XtextActivator
 Export-Package: org.eclipse.triquetrum.commands.ui.contentassist,

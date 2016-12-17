@@ -41,24 +41,14 @@ import org.eclipse.triquetrum.commands.tqcl.TqclPackage;
 public class InsertImpl extends CommandImpl implements Insert
 {
   /**
-   * The default value of the '{@link #getObj() <em>Obj</em>}' attribute.
+   * The cached value of the '{@link #getObj() <em>Obj</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getObj()
    * @generated
    * @ordered
    */
-  protected static final String OBJ_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getObj() <em>Obj</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getObj()
-   * @generated
-   * @ordered
-   */
-  protected String obj = OBJ_EDEFAULT;
+  protected NamedObj obj;
 
   /**
    * The cached value of the '{@link #getAlias() <em>Alias</em>}' containment reference.
@@ -106,7 +96,7 @@ public class InsertImpl extends CommandImpl implements Insert
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getObj()
+  public NamedObj getObj()
   {
     return obj;
   }
@@ -116,12 +106,37 @@ public class InsertImpl extends CommandImpl implements Insert
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setObj(String newObj)
+  public NotificationChain basicSetObj(NamedObj newObj, NotificationChain msgs)
   {
-    String oldObj = obj;
+    NamedObj oldObj = obj;
     obj = newObj;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TqclPackage.INSERT__OBJ, oldObj, obj));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TqclPackage.INSERT__OBJ, oldObj, newObj);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setObj(NamedObj newObj)
+  {
+    if (newObj != obj)
+    {
+      NotificationChain msgs = null;
+      if (obj != null)
+        msgs = ((InternalEObject)obj).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TqclPackage.INSERT__OBJ, null, msgs);
+      if (newObj != null)
+        msgs = ((InternalEObject)newObj).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TqclPackage.INSERT__OBJ, null, msgs);
+      msgs = basicSetObj(newObj, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TqclPackage.INSERT__OBJ, newObj, newObj));
   }
 
   /**
@@ -196,6 +211,8 @@ public class InsertImpl extends CommandImpl implements Insert
   {
     switch (featureID)
     {
+      case TqclPackage.INSERT__OBJ:
+        return basicSetObj(null, msgs);
       case TqclPackage.INSERT__ALIAS:
         return basicSetAlias(null, msgs);
       case TqclPackage.INSERT__PARAMETERS:
@@ -236,7 +253,7 @@ public class InsertImpl extends CommandImpl implements Insert
     switch (featureID)
     {
       case TqclPackage.INSERT__OBJ:
-        setObj((String)newValue);
+        setObj((NamedObj)newValue);
         return;
       case TqclPackage.INSERT__ALIAS:
         setAlias((NamedObj)newValue);
@@ -260,7 +277,7 @@ public class InsertImpl extends CommandImpl implements Insert
     switch (featureID)
     {
       case TqclPackage.INSERT__OBJ:
-        setObj(OBJ_EDEFAULT);
+        setObj((NamedObj)null);
         return;
       case TqclPackage.INSERT__ALIAS:
         setAlias((NamedObj)null);
@@ -283,30 +300,13 @@ public class InsertImpl extends CommandImpl implements Insert
     switch (featureID)
     {
       case TqclPackage.INSERT__OBJ:
-        return OBJ_EDEFAULT == null ? obj != null : !OBJ_EDEFAULT.equals(obj);
+        return obj != null;
       case TqclPackage.INSERT__ALIAS:
         return alias != null;
       case TqclPackage.INSERT__PARAMETERS:
         return parameters != null && !parameters.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (obj: ");
-    result.append(obj);
-    result.append(')');
-    return result.toString();
   }
 
 } //InsertImpl

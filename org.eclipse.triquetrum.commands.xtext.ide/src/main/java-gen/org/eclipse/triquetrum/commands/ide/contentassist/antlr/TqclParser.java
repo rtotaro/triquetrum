@@ -35,15 +35,17 @@ public class TqclParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getCommandAccess().getAlternatives(), "rule__Command__Alternatives");
+					put(grammarAccess.getCommandAccess().getAlternatives_0(), "rule__Command__Alternatives_0");
 					put(grammarAccess.getJvmTypeReferenceAccess().getAlternatives(), "rule__JvmTypeReference__Alternatives");
 					put(grammarAccess.getJvmArgumentTypeReferenceAccess().getAlternatives(), "rule__JvmArgumentTypeReference__Alternatives");
 					put(grammarAccess.getJvmWildcardTypeReferenceAccess().getAlternatives_2(), "rule__JvmWildcardTypeReference__Alternatives_2");
 					put(grammarAccess.getXImportDeclarationAccess().getAlternatives_1(), "rule__XImportDeclaration__Alternatives_1");
 					put(grammarAccess.getXImportDeclarationAccess().getAlternatives_1_0_3(), "rule__XImportDeclaration__Alternatives_1_0_3");
+					put(grammarAccess.getCommandAccess().getGroup(), "rule__Command__Group__0");
 					put(grammarAccess.getInsertAccess().getGroup(), "rule__Insert__Group__0");
 					put(grammarAccess.getInsertAccess().getGroup_2(), "rule__Insert__Group_2__0");
 					put(grammarAccess.getInsertAccess().getGroup_3(), "rule__Insert__Group_3__0");
+					put(grammarAccess.getInsertAccess().getGroup_3_2(), "rule__Insert__Group_3_2__0");
 					put(grammarAccess.getParameterAccess().getGroup(), "rule__Parameter__Group__0");
 					put(grammarAccess.getConnectAccess().getGroup(), "rule__Connect__Group__0");
 					put(grammarAccess.getJvmTypeReferenceAccess().getGroup_0(), "rule__JvmTypeReference__Group_0__0");
@@ -81,7 +83,7 @@ public class TqclParser extends AbstractContentAssistParser {
 					put(grammarAccess.getInsertAccess().getObjAssignment_1(), "rule__Insert__ObjAssignment_1");
 					put(grammarAccess.getInsertAccess().getAliasAssignment_2_1(), "rule__Insert__AliasAssignment_2_1");
 					put(grammarAccess.getInsertAccess().getParametersAssignment_3_1(), "rule__Insert__ParametersAssignment_3_1");
-					put(grammarAccess.getParameterAccess().getNameAssignment_0(), "rule__Parameter__NameAssignment_0");
+					put(grammarAccess.getInsertAccess().getParametersAssignment_3_2_1(), "rule__Insert__ParametersAssignment_3_2_1");
 					put(grammarAccess.getParameterAccess().getValueAssignment_2(), "rule__Parameter__ValueAssignment_2");
 					put(grammarAccess.getNamedObjAccess().getNameAssignment(), "rule__NamedObj__NameAssignment");
 					put(grammarAccess.getConnectAccess().getFromAssignment_1(), "rule__Connect__FromAssignment_1");

@@ -177,9 +177,9 @@ public class TqclPackageImpl extends EPackageImpl implements TqclPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getInsert_Obj()
+  public EReference getInsert_Obj()
   {
-    return (EAttribute)insertEClass.getEStructuralFeatures().get(0);
+    return (EReference)insertEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -217,26 +217,6 @@ public class TqclPackageImpl extends EPackageImpl implements TqclPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getParameter_Name()
-  {
-    return (EAttribute)parameterEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getParameter_Value()
-  {
-    return (EAttribute)parameterEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getNamedObj()
   {
     return namedObjEClass;
@@ -247,9 +227,19 @@ public class TqclPackageImpl extends EPackageImpl implements TqclPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getNamedObj_Name()
+  public EAttribute getNamedObj_Value()
   {
     return (EAttribute)namedObjEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getNamedObj_Name()
+  {
+    return (EAttribute)namedObjEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -318,15 +308,14 @@ public class TqclPackageImpl extends EPackageImpl implements TqclPackage
     commandEClass = createEClass(COMMAND);
 
     insertEClass = createEClass(INSERT);
-    createEAttribute(insertEClass, INSERT__OBJ);
+    createEReference(insertEClass, INSERT__OBJ);
     createEReference(insertEClass, INSERT__ALIAS);
     createEReference(insertEClass, INSERT__PARAMETERS);
 
     parameterEClass = createEClass(PARAMETER);
-    createEAttribute(parameterEClass, PARAMETER__NAME);
-    createEAttribute(parameterEClass, PARAMETER__VALUE);
 
     namedObjEClass = createEClass(NAMED_OBJ);
+    createEAttribute(namedObjEClass, NAMED_OBJ__VALUE);
     createEAttribute(namedObjEClass, NAMED_OBJ__NAME);
 
     connectEClass = createEClass(CONNECT);
@@ -364,6 +353,7 @@ public class TqclPackageImpl extends EPackageImpl implements TqclPackage
 
     // Add supertypes to classes
     insertEClass.getESuperTypes().add(this.getCommand());
+    namedObjEClass.getESuperTypes().add(this.getParameter());
     connectEClass.getESuperTypes().add(this.getCommand());
 
     // Initialize classes and features; add operations and parameters
@@ -373,15 +363,14 @@ public class TqclPackageImpl extends EPackageImpl implements TqclPackage
     initEClass(commandEClass, Command.class, "Command", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(insertEClass, Insert.class, "Insert", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getInsert_Obj(), ecorePackage.getEString(), "obj", null, 0, 1, Insert.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInsert_Obj(), this.getNamedObj(), null, "obj", null, 0, 1, Insert.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getInsert_Alias(), this.getNamedObj(), null, "alias", null, 0, 1, Insert.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getInsert_Parameters(), this.getParameter(), null, "parameters", null, 0, -1, Insert.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getParameter_Name(), ecorePackage.getEString(), "name", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getParameter_Value(), ecorePackage.getEString(), "value", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(namedObjEClass, NamedObj.class, "NamedObj", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getNamedObj_Value(), ecorePackage.getEString(), "value", null, 0, 1, NamedObj.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getNamedObj_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedObj.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(connectEClass, Connect.class, "Connect", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

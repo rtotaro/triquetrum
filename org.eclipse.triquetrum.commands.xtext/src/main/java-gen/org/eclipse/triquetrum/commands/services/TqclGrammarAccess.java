@@ -39,29 +39,37 @@ public class TqclGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class CommandElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.triquetrum.commands.Tqcl.Command");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cInsertParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cConnectParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final RuleCall cInsertParserRuleCall_0_0 = (RuleCall)cAlternatives_0.eContents().get(0);
+		private final RuleCall cConnectParserRuleCall_0_1 = (RuleCall)cAlternatives_0.eContents().get(1);
+		private final Keyword cSemicolonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
 		//Command:
-		//	Insert | Connect;
+		//	(Insert | Connect) ";";
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Insert | Connect
-		public Alternatives getAlternatives() { return cAlternatives; }
+		//(Insert | Connect) ";"
+		public Group getGroup() { return cGroup; }
+		
+		//(Insert | Connect)
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 		
 		//Insert
-		public RuleCall getInsertParserRuleCall_0() { return cInsertParserRuleCall_0; }
+		public RuleCall getInsertParserRuleCall_0_0() { return cInsertParserRuleCall_0_0; }
 		
 		//Connect
-		public RuleCall getConnectParserRuleCall_1() { return cConnectParserRuleCall_1; }
+		public RuleCall getConnectParserRuleCall_0_1() { return cConnectParserRuleCall_0_1; }
+		
+		//";"
+		public Keyword getSemicolonKeyword_1() { return cSemicolonKeyword_1; }
 	}
 	public class InsertElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.triquetrum.commands.Tqcl.Insert");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cInsertKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cObjAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cObjQualifiedNameParserRuleCall_1_0 = (RuleCall)cObjAssignment_1.eContents().get(0);
+		private final RuleCall cObjNamedObjParserRuleCall_1_0 = (RuleCall)cObjAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Keyword cAsKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Assignment cAliasAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
@@ -70,22 +78,26 @@ public class TqclGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cWithKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Assignment cParametersAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cParametersParameterParserRuleCall_3_1_0 = (RuleCall)cParametersAssignment_3_1.eContents().get(0);
+		private final Group cGroup_3_2 = (Group)cGroup_3.eContents().get(2);
+		private final Keyword cCommaKeyword_3_2_0 = (Keyword)cGroup_3_2.eContents().get(0);
+		private final Assignment cParametersAssignment_3_2_1 = (Assignment)cGroup_3_2.eContents().get(1);
+		private final RuleCall cParametersParameterParserRuleCall_3_2_1_0 = (RuleCall)cParametersAssignment_3_2_1.eContents().get(0);
 		
 		//Insert:
-		//	"insert" obj=QualifiedName ("as" alias=NamedObj)? ("with" parameters+=Parameter*)?;
+		//	"insert" obj=NamedObj ("as" alias=NamedObj)? ("with" parameters+=Parameter ("," parameters+=Parameter)*)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"insert" obj=QualifiedName ("as" alias=NamedObj)? ("with" parameters+=Parameter*)?
+		//"insert" obj=NamedObj ("as" alias=NamedObj)? ("with" parameters+=Parameter ("," parameters+=Parameter)*)?
 		public Group getGroup() { return cGroup; }
 		
 		//"insert"
 		public Keyword getInsertKeyword_0() { return cInsertKeyword_0; }
 		
-		//obj=QualifiedName
+		//obj=NamedObj
 		public Assignment getObjAssignment_1() { return cObjAssignment_1; }
 		
-		//QualifiedName
-		public RuleCall getObjQualifiedNameParserRuleCall_1_0() { return cObjQualifiedNameParserRuleCall_1_0; }
+		//NamedObj
+		public RuleCall getObjNamedObjParserRuleCall_1_0() { return cObjNamedObjParserRuleCall_1_0; }
 		
 		//("as" alias=NamedObj)?
 		public Group getGroup_2() { return cGroup_2; }
@@ -99,39 +111,47 @@ public class TqclGrammarAccess extends AbstractGrammarElementFinder {
 		//NamedObj
 		public RuleCall getAliasNamedObjParserRuleCall_2_1_0() { return cAliasNamedObjParserRuleCall_2_1_0; }
 		
-		//("with" parameters+=Parameter*)?
+		//("with" parameters+=Parameter ("," parameters+=Parameter)*)?
 		public Group getGroup_3() { return cGroup_3; }
 		
 		//"with"
 		public Keyword getWithKeyword_3_0() { return cWithKeyword_3_0; }
 		
-		//parameters+=Parameter*
+		//parameters+=Parameter
 		public Assignment getParametersAssignment_3_1() { return cParametersAssignment_3_1; }
 		
 		//Parameter
 		public RuleCall getParametersParameterParserRuleCall_3_1_0() { return cParametersParameterParserRuleCall_3_1_0; }
+		
+		//("," parameters+=Parameter)*
+		public Group getGroup_3_2() { return cGroup_3_2; }
+		
+		//","
+		public Keyword getCommaKeyword_3_2_0() { return cCommaKeyword_3_2_0; }
+		
+		//parameters+=Parameter
+		public Assignment getParametersAssignment_3_2_1() { return cParametersAssignment_3_2_1; }
+		
+		//Parameter
+		public RuleCall getParametersParameterParserRuleCall_3_2_1_0() { return cParametersParameterParserRuleCall_3_2_1_0; }
 	}
 	public class ParameterElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.triquetrum.commands.Tqcl.Parameter");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNameQualifiedNameParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final RuleCall cNamedObjParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cValueSTRINGTerminalRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
 		
 		//Parameter:
-		//	name=QualifiedName "=" value=STRING;
+		//	NamedObj "=" value=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=QualifiedName "=" value=STRING
+		//NamedObj "=" value=STRING
 		public Group getGroup() { return cGroup; }
 		
-		//name=QualifiedName
-		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
-		
-		//QualifiedName
-		public RuleCall getNameQualifiedNameParserRuleCall_0_0() { return cNameQualifiedNameParserRuleCall_0_0; }
+		//NamedObj
+		public RuleCall getNamedObjParserRuleCall_0() { return cNamedObjParserRuleCall_0; }
 		
 		//"="
 		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
@@ -256,7 +276,7 @@ public class TqclGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Command:
-	//	Insert | Connect;
+	//	(Insert | Connect) ";";
 	public CommandElements getCommandAccess() {
 		return pCommand;
 	}
@@ -266,7 +286,7 @@ public class TqclGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Insert:
-	//	"insert" obj=QualifiedName ("as" alias=NamedObj)? ("with" parameters+=Parameter*)?;
+	//	"insert" obj=NamedObj ("as" alias=NamedObj)? ("with" parameters+=Parameter ("," parameters+=Parameter)*)?;
 	public InsertElements getInsertAccess() {
 		return pInsert;
 	}
@@ -276,7 +296,7 @@ public class TqclGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Parameter:
-	//	name=QualifiedName "=" value=STRING;
+	//	NamedObj "=" value=STRING;
 	public ParameterElements getParameterAccess() {
 		return pParameter;
 	}

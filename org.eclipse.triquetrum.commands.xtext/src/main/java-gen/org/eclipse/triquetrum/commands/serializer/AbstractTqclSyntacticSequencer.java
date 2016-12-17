@@ -21,14 +21,12 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public abstract class AbstractTqclSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected TqclGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_Insert_WithKeyword_3_0_q;
 	protected AbstractElementAlias match_XFunctionTypeRef___LeftParenthesisKeyword_0_0_RightParenthesisKeyword_0_2__q;
 	protected AbstractElementAlias match_XImportDeclaration_SemicolonKeyword_2_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (TqclGrammarAccess) access;
-		match_Insert_WithKeyword_3_0_q = new TokenAlias(false, true, grammarAccess.getInsertAccess().getWithKeyword_3_0());
 		match_XFunctionTypeRef___LeftParenthesisKeyword_0_0_RightParenthesisKeyword_0_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getXFunctionTypeRefAccess().getLeftParenthesisKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getXFunctionTypeRefAccess().getRightParenthesisKeyword_0_2()));
 		match_XImportDeclaration_SemicolonKeyword_2_q = new TokenAlias(false, true, grammarAccess.getXImportDeclarationAccess().getSemicolonKeyword_2());
 	}
@@ -57,9 +55,7 @@ public abstract class AbstractTqclSyntacticSequencer extends AbstractSyntacticSe
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Insert_WithKeyword_3_0_q.equals(syntax))
-				emit_Insert_WithKeyword_3_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_XFunctionTypeRef___LeftParenthesisKeyword_0_0_RightParenthesisKeyword_0_2__q.equals(syntax))
+			if (match_XFunctionTypeRef___LeftParenthesisKeyword_0_0_RightParenthesisKeyword_0_2__q.equals(syntax))
 				emit_XFunctionTypeRef___LeftParenthesisKeyword_0_0_RightParenthesisKeyword_0_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_XImportDeclaration_SemicolonKeyword_2_q.equals(syntax))
 				emit_XImportDeclaration_SemicolonKeyword_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
@@ -67,18 +63,6 @@ public abstract class AbstractTqclSyntacticSequencer extends AbstractSyntacticSe
 		}
 	}
 
-	/**
-	 * Ambiguous syntax:
-	 *     'with'?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     alias=NamedObj (ambiguity) (rule end)
-	 *     obj=QualifiedName (ambiguity) (rule end)
-	 */
-	protected void emit_Insert_WithKeyword_3_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
 	/**
 	 * Ambiguous syntax:
 	 *     ('(' ')')?

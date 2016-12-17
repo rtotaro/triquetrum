@@ -7,13 +7,13 @@ TriquetrumScript:
 	commands+=Command*;
 	
 Command:
-	Insert|Connect;
+	(Insert|Connect)";";
 
 Insert:
-	"insert" obj=QualifiedName ("as" alias=NamedObj)? ("with" parameters += (Parameter)*)?;
+	"insert" obj=NamedObj ("as" alias=NamedObj)? ("with" parameters += (Parameter) ("," parameters+=Parameter)*)?;
 
 Parameter:
-	name = QualifiedName "=" value=STRING;
+	NamedObj "=" value=STRING;
 
 
 NamedObj:

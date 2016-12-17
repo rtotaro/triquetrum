@@ -112,22 +112,28 @@ ruleCommand returns [EObject current=null]
 	leaveRule();
 }:
 	(
+		(
+			{
+				newCompositeNode(grammarAccess.getCommandAccess().getInsertParserRuleCall_0_0());
+			}
+			this_Insert_0=ruleInsert
+			{
+				$current = $this_Insert_0.current;
+				afterParserOrEnumRuleCall();
+			}
+			    |
+			{
+				newCompositeNode(grammarAccess.getCommandAccess().getConnectParserRuleCall_0_1());
+			}
+			this_Connect_1=ruleConnect
+			{
+				$current = $this_Connect_1.current;
+				afterParserOrEnumRuleCall();
+			}
+		)
+		otherlv_2=';'
 		{
-			newCompositeNode(grammarAccess.getCommandAccess().getInsertParserRuleCall_0());
-		}
-		this_Insert_0=ruleInsert
-		{
-			$current = $this_Insert_0.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getCommandAccess().getConnectParserRuleCall_1());
-		}
-		this_Connect_1=ruleConnect
-		{
-			$current = $this_Connect_1.current;
-			afterParserOrEnumRuleCall();
+			newLeafNode(otherlv_2, grammarAccess.getCommandAccess().getSemicolonKeyword_1());
 		}
 	)
 ;
@@ -155,9 +161,9 @@ ruleInsert returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getInsertAccess().getObjQualifiedNameParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getInsertAccess().getObjNamedObjParserRuleCall_1_0());
 				}
-				lv_obj_1_0=ruleQualifiedName
+				lv_obj_1_0=ruleNamedObj
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getInsertRule());
@@ -166,7 +172,7 @@ ruleInsert returns [EObject current=null]
 						$current,
 						"obj",
 						lv_obj_1_0,
-						"org.eclipse.xtext.xbase.Xtype.QualifiedName");
+						"org.eclipse.triquetrum.commands.Tqcl.NamedObj");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -219,6 +225,31 @@ ruleInsert returns [EObject current=null]
 						afterParserOrEnumRuleCall();
 					}
 				)
+			)
+			(
+				otherlv_6=','
+				{
+					newLeafNode(otherlv_6, grammarAccess.getInsertAccess().getCommaKeyword_3_2_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getInsertAccess().getParametersParameterParserRuleCall_3_2_1_0());
+						}
+						lv_parameters_7_0=ruleParameter
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getInsertRule());
+							}
+							add(
+								$current,
+								"parameters",
+								lv_parameters_7_0,
+								"org.eclipse.triquetrum.commands.Tqcl.Parameter");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
 			)*
 		)?
 	)
@@ -240,25 +271,14 @@ ruleParameter returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getParameterAccess().getNameQualifiedNameParserRuleCall_0_0());
-				}
-				lv_name_0_0=ruleQualifiedName
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getParameterRule());
-					}
-					set(
-						$current,
-						"name",
-						lv_name_0_0,
-						"org.eclipse.xtext.xbase.Xtype.QualifiedName");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
+		{
+			newCompositeNode(grammarAccess.getParameterAccess().getNamedObjParserRuleCall_0());
+		}
+		this_NamedObj_0=ruleNamedObj
+		{
+			$current = $this_NamedObj_0.current;
+			afterParserOrEnumRuleCall();
+		}
 		otherlv_1='='
 		{
 			newLeafNode(otherlv_1, grammarAccess.getParameterAccess().getEqualsSignKeyword_1());
