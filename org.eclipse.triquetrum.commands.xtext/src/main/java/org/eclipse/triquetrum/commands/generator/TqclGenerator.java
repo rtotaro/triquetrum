@@ -24,18 +24,25 @@ import org.eclipse.graphiti.dt.IDiagramTypeProvider;
 import org.eclipse.graphiti.features.ICreateFeature;
 import org.eclipse.graphiti.features.IFeatureProvider;
 import org.eclipse.graphiti.features.context.impl.AddContext;
+import org.eclipse.graphiti.features.context.impl.CreateConnectionContext;
 import org.eclipse.graphiti.features.context.impl.CreateContext;
+import org.eclipse.graphiti.mm.pictograms.Anchor;
 import org.eclipse.graphiti.mm.pictograms.Diagram;
+import org.eclipse.graphiti.mm.pictograms.Shape;
+import org.eclipse.graphiti.services.Graphiti;
 import org.eclipse.graphiti.ui.editor.DiagramBehavior;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.triquetrum.commands.tqcl.Command;
+import org.eclipse.triquetrum.commands.tqcl.Connect;
 import org.eclipse.triquetrum.commands.tqcl.Insert;
 import org.eclipse.triquetrum.commands.tqcl.NamedObj;
 import org.eclipse.triquetrum.commands.tqcl.TriquetrumScript;
 import org.eclipse.triquetrum.workflow.editor.TriqDiagramEditor;
 import org.eclipse.triquetrum.workflow.editor.TriqDiagramTypeProvider;
 import org.eclipse.triquetrum.workflow.editor.TriqFeatureProvider;
+import org.eclipse.triquetrum.workflow.editor.features.ConnectionCreateFeature;
 import org.eclipse.triquetrum.workflow.editor.features.ModelElementCreateFeature;
+import org.eclipse.triquetrum.workflow.model.Port;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IEditorReference;
 import org.eclipse.ui.PlatformUI;
@@ -87,21 +94,40 @@ public class TqclGenerator extends AbstractGenerator {
 		for (EObject eObject : contents) {
 			if (eObject instanceof TriquetrumScript) {
 
-				// Graphiti.getLinkService().getLinkForPictogramElement(triqDiagramEditor.getDiagramBehavior().getDiagramContainer());
-				// TriqFactory triqFactory = TriqFactoryImpl.init();
-				
-				
 				TriquetrumScript triquetrumScript = (TriquetrumScript) eObject;
 				final EList<Command> commands = triquetrumScript.getCommands();
 
-//				editingDomain.
-				
 				for (Command command : commands) {
 					if (command instanceof Insert) {
-						InsertActor(diagramBehavior, diagram, command);
+						insertActor(diagramBehavior, diagram, command);
+					}
+					else if (command instanceof Connect) {
+						Connect connect = (Connect) command;
+						ConnectionCreateFeature feature = new ConnectionCreateFeature(featureProvider);
+						CreateConnectionContext createContext = new CreateConnectionContext();
+						EList<Shape> children = diagram.getChildren();
 						
-						System.out.println();
-
+						for (Shape shape : children) {
+							EList<Anchor> anchors = shape.getAnchors();
+							for (Anchor anchor : anchors) {
+								EObject bo = Graphiti.getLinkService().getBusinessObjectForLinkedPictogramElement(anchor);
+								if (bo instanceof Port) {
+									Port port = (Port) bo;
+									String fullName = port.getFullName();
+									if(fullName.endsWith(connect.getFrom().getName()))
+									{
+										createContext.setSourceAnchor(anchor);
+									}
+									if(fullName.endsWith(connect.getTo().getName()))
+									{
+										createContext.setTargetAnchor(anchor);
+									}
+								}
+							}
+						}
+						
+						diagramBehavior.executeFeature(feature, createContext);
+						
 					}
 
 				}
@@ -124,7 +150,7 @@ public class TqclGenerator extends AbstractGenerator {
 		// IteratorExtensions.join(names, ", "));
 	}
 
-	private void InsertActor(DiagramBehavior diagramBehavior, Diagram diagram, Command command) {
+	private void insertActor(DiagramBehavior diagramBehavior, Diagram diagram, Command command) {
 		Insert insert = (Insert) command;
 		NamedObj name = insert.getName();
 		AddContext addContext = new AddContext();
