@@ -18,7 +18,13 @@ Require-Bundle: org.eclipse.xtext,
  org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional,
  org.eclipse.xtext.xbase.ui,
  org.eclipse.xtext.ui,
- org.eclipse.xtext.generator;bundle-version="2.10.0"
+ org.eclipse.xtext.generator;bundle-version="2.10.0",
+ org.ptolemy.commons;bundle-version="11.0.0",
+ ptolemy.core;bundle-version="11.0.0",
+ org.eclipse.triquetrum.workflow.model;bundle-version="0.1.0",
+ org.eclipse.graphiti;bundle-version="0.13.0",
+ org.eclipse.triquetrum.workflow.editor;bundle-version="0.1.0",
+ org.eclipse.graphiti.ui;bundle-version="0.13.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Import-Package: org.apache.log4j
 Export-Package: org.eclipse.triquetrum.commands.tqcl,
