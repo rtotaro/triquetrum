@@ -64,15 +64,11 @@ public abstract class AbstractTqclSemanticSequencer extends XtypeSemanticSequenc
 				sequence_Insert(context, (Insert) semanticObject); 
 				return; 
 			case TqclPackage.NAMED_OBJ:
-				if (rule == grammarAccess.getNamedObjRule()) {
-					sequence_NamedObj(context, (NamedObj) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getParameterRule()) {
-					sequence_NamedObj_Parameter(context, (NamedObj) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_NamedObj(context, (NamedObj) semanticObject); 
+				return; 
+			case TqclPackage.PARAMETER:
+				sequence_Parameter(context, (org.eclipse.triquetrum.commands.tqcl.Parameter) semanticObject); 
+				return; 
 			case TqclPackage.TRIQUETRUM_SCRIPT:
 				sequence_TriquetrumScript(context, (TriquetrumScript) semanticObject); 
 				return; 
@@ -190,13 +186,22 @@ public abstract class AbstractTqclSemanticSequencer extends XtypeSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     Parameter returns NamedObj
+	 *     Parameter returns Parameter
 	 *
 	 * Constraint:
-	 *     ((name=QualifiedName | name=STRING) value=STRING)
+	 *     (id=NamedObj value=STRING)
 	 */
-	protected void sequence_NamedObj_Parameter(ISerializationContext context, NamedObj semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+	protected void sequence_Parameter(ISerializationContext context, org.eclipse.triquetrum.commands.tqcl.Parameter semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TqclPackage.Literals.PARAMETER__ID) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TqclPackage.Literals.PARAMETER__ID));
+			if (transientValues.isValueTransient(semanticObject, TqclPackage.Literals.PARAMETER__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TqclPackage.Literals.PARAMETER__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getParameterAccess().getIdNamedObjParserRuleCall_0_0(), semanticObject.getId());
+		feeder.accept(grammarAccess.getParameterAccess().getValueSTRINGTerminalRuleCall_2_0(), semanticObject.getValue());
+		feeder.finish();
 	}
 	
 	

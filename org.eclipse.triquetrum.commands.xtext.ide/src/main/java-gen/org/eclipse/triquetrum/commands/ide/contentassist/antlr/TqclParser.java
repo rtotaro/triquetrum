@@ -95,6 +95,7 @@ public class TqclParser extends AbstractContentAssistParser {
 					put(grammarAccess.getInsertAccess().getNameAssignment_2_1(), "rule__Insert__NameAssignment_2_1");
 					put(grammarAccess.getInsertAccess().getParametersAssignment_3_1(), "rule__Insert__ParametersAssignment_3_1");
 					put(grammarAccess.getInsertAccess().getParametersAssignment_3_2_1(), "rule__Insert__ParametersAssignment_3_2_1");
+					put(grammarAccess.getParameterAccess().getIdAssignment_0(), "rule__Parameter__IdAssignment_0");
 					put(grammarAccess.getParameterAccess().getValueAssignment_2(), "rule__Parameter__ValueAssignment_2");
 					put(grammarAccess.getNamedObjAccess().getNameAssignment(), "rule__NamedObj__NameAssignment");
 					put(grammarAccess.getConnectAccess().getFromAssignment_1(), "rule__Connect__FromAssignment_1");

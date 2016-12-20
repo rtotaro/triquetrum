@@ -3778,28 +3778,34 @@ public class InternalTqclParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Parameter__Group__0__Impl"
-    // InternalTqcl.g:1101:1: rule__Parameter__Group__0__Impl : ( ruleNamedObj ) ;
+    // InternalTqcl.g:1101:1: rule__Parameter__Group__0__Impl : ( ( rule__Parameter__IdAssignment_0 ) ) ;
     public final void rule__Parameter__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTqcl.g:1105:1: ( ( ruleNamedObj ) )
-            // InternalTqcl.g:1106:1: ( ruleNamedObj )
+            // InternalTqcl.g:1105:1: ( ( ( rule__Parameter__IdAssignment_0 ) ) )
+            // InternalTqcl.g:1106:1: ( ( rule__Parameter__IdAssignment_0 ) )
             {
-            // InternalTqcl.g:1106:1: ( ruleNamedObj )
-            // InternalTqcl.g:1107:2: ruleNamedObj
+            // InternalTqcl.g:1106:1: ( ( rule__Parameter__IdAssignment_0 ) )
+            // InternalTqcl.g:1107:2: ( rule__Parameter__IdAssignment_0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getParameterAccess().getNamedObjParserRuleCall_0()); 
+               before(grammarAccess.getParameterAccess().getIdAssignment_0()); 
             }
+            // InternalTqcl.g:1108:2: ( rule__Parameter__IdAssignment_0 )
+            // InternalTqcl.g:1108:3: rule__Parameter__IdAssignment_0
+            {
             pushFollow(FOLLOW_2);
-            ruleNamedObj();
+            rule__Parameter__IdAssignment_0();
 
             state._fsp--;
             if (state.failed) return ;
+
+            }
+
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getParameterAccess().getNamedObjParserRuleCall_0()); 
+               after(grammarAccess.getParameterAccess().getIdAssignment_0()); 
             }
 
             }
@@ -10476,18 +10482,63 @@ public class InternalTqclParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Insert__ParametersAssignment_3_2_1"
 
 
+    // $ANTLR start "rule__Parameter__IdAssignment_0"
+    // InternalTqcl.g:3216:1: rule__Parameter__IdAssignment_0 : ( ruleNamedObj ) ;
+    public final void rule__Parameter__IdAssignment_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalTqcl.g:3220:1: ( ( ruleNamedObj ) )
+            // InternalTqcl.g:3221:2: ( ruleNamedObj )
+            {
+            // InternalTqcl.g:3221:2: ( ruleNamedObj )
+            // InternalTqcl.g:3222:3: ruleNamedObj
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getParameterAccess().getIdNamedObjParserRuleCall_0_0()); 
+            }
+            pushFollow(FOLLOW_2);
+            ruleNamedObj();
+
+            state._fsp--;
+            if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getParameterAccess().getIdNamedObjParserRuleCall_0_0()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Parameter__IdAssignment_0"
+
+
     // $ANTLR start "rule__Parameter__ValueAssignment_2"
-    // InternalTqcl.g:3216:1: rule__Parameter__ValueAssignment_2 : ( RULE_STRING ) ;
+    // InternalTqcl.g:3231:1: rule__Parameter__ValueAssignment_2 : ( RULE_STRING ) ;
     public final void rule__Parameter__ValueAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTqcl.g:3220:1: ( ( RULE_STRING ) )
-            // InternalTqcl.g:3221:2: ( RULE_STRING )
+            // InternalTqcl.g:3235:1: ( ( RULE_STRING ) )
+            // InternalTqcl.g:3236:2: ( RULE_STRING )
             {
-            // InternalTqcl.g:3221:2: ( RULE_STRING )
-            // InternalTqcl.g:3222:3: RULE_STRING
+            // InternalTqcl.g:3236:2: ( RULE_STRING )
+            // InternalTqcl.g:3237:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getParameterAccess().getValueSTRINGTerminalRuleCall_2_0()); 
@@ -10518,23 +10569,23 @@ public class InternalTqclParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NamedObj__NameAssignment"
-    // InternalTqcl.g:3231:1: rule__NamedObj__NameAssignment : ( ( rule__NamedObj__NameAlternatives_0 ) ) ;
+    // InternalTqcl.g:3246:1: rule__NamedObj__NameAssignment : ( ( rule__NamedObj__NameAlternatives_0 ) ) ;
     public final void rule__NamedObj__NameAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTqcl.g:3235:1: ( ( ( rule__NamedObj__NameAlternatives_0 ) ) )
-            // InternalTqcl.g:3236:2: ( ( rule__NamedObj__NameAlternatives_0 ) )
+            // InternalTqcl.g:3250:1: ( ( ( rule__NamedObj__NameAlternatives_0 ) ) )
+            // InternalTqcl.g:3251:2: ( ( rule__NamedObj__NameAlternatives_0 ) )
             {
-            // InternalTqcl.g:3236:2: ( ( rule__NamedObj__NameAlternatives_0 ) )
-            // InternalTqcl.g:3237:3: ( rule__NamedObj__NameAlternatives_0 )
+            // InternalTqcl.g:3251:2: ( ( rule__NamedObj__NameAlternatives_0 ) )
+            // InternalTqcl.g:3252:3: ( rule__NamedObj__NameAlternatives_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNamedObjAccess().getNameAlternatives_0()); 
             }
-            // InternalTqcl.g:3238:3: ( rule__NamedObj__NameAlternatives_0 )
-            // InternalTqcl.g:3238:4: rule__NamedObj__NameAlternatives_0
+            // InternalTqcl.g:3253:3: ( rule__NamedObj__NameAlternatives_0 )
+            // InternalTqcl.g:3253:4: rule__NamedObj__NameAlternatives_0
             {
             pushFollow(FOLLOW_2);
             rule__NamedObj__NameAlternatives_0();
@@ -10569,17 +10620,17 @@ public class InternalTqclParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Connect__FromAssignment_1"
-    // InternalTqcl.g:3246:1: rule__Connect__FromAssignment_1 : ( ruleNamedObj ) ;
+    // InternalTqcl.g:3261:1: rule__Connect__FromAssignment_1 : ( ruleNamedObj ) ;
     public final void rule__Connect__FromAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTqcl.g:3250:1: ( ( ruleNamedObj ) )
-            // InternalTqcl.g:3251:2: ( ruleNamedObj )
+            // InternalTqcl.g:3265:1: ( ( ruleNamedObj ) )
+            // InternalTqcl.g:3266:2: ( ruleNamedObj )
             {
-            // InternalTqcl.g:3251:2: ( ruleNamedObj )
-            // InternalTqcl.g:3252:3: ruleNamedObj
+            // InternalTqcl.g:3266:2: ( ruleNamedObj )
+            // InternalTqcl.g:3267:3: ruleNamedObj
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getConnectAccess().getFromNamedObjParserRuleCall_1_0()); 
@@ -10614,17 +10665,17 @@ public class InternalTqclParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Connect__ToAssignment_3"
-    // InternalTqcl.g:3261:1: rule__Connect__ToAssignment_3 : ( ruleNamedObj ) ;
+    // InternalTqcl.g:3276:1: rule__Connect__ToAssignment_3 : ( ruleNamedObj ) ;
     public final void rule__Connect__ToAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTqcl.g:3265:1: ( ( ruleNamedObj ) )
-            // InternalTqcl.g:3266:2: ( ruleNamedObj )
+            // InternalTqcl.g:3280:1: ( ( ruleNamedObj ) )
+            // InternalTqcl.g:3281:2: ( ruleNamedObj )
             {
-            // InternalTqcl.g:3266:2: ( ruleNamedObj )
-            // InternalTqcl.g:3267:3: ruleNamedObj
+            // InternalTqcl.g:3281:2: ( ruleNamedObj )
+            // InternalTqcl.g:3282:3: ruleNamedObj
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getConnectAccess().getToNamedObjParserRuleCall_3_0()); 
@@ -10659,17 +10710,17 @@ public class InternalTqclParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XFunctionTypeRef__ParamTypesAssignment_0_1_0"
-    // InternalTqcl.g:3276:1: rule__XFunctionTypeRef__ParamTypesAssignment_0_1_0 : ( ruleJvmTypeReference ) ;
+    // InternalTqcl.g:3291:1: rule__XFunctionTypeRef__ParamTypesAssignment_0_1_0 : ( ruleJvmTypeReference ) ;
     public final void rule__XFunctionTypeRef__ParamTypesAssignment_0_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTqcl.g:3280:1: ( ( ruleJvmTypeReference ) )
-            // InternalTqcl.g:3281:2: ( ruleJvmTypeReference )
+            // InternalTqcl.g:3295:1: ( ( ruleJvmTypeReference ) )
+            // InternalTqcl.g:3296:2: ( ruleJvmTypeReference )
             {
-            // InternalTqcl.g:3281:2: ( ruleJvmTypeReference )
-            // InternalTqcl.g:3282:3: ruleJvmTypeReference
+            // InternalTqcl.g:3296:2: ( ruleJvmTypeReference )
+            // InternalTqcl.g:3297:3: ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXFunctionTypeRefAccess().getParamTypesJvmTypeReferenceParserRuleCall_0_1_0_0()); 
@@ -10704,17 +10755,17 @@ public class InternalTqclParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XFunctionTypeRef__ParamTypesAssignment_0_1_1_1"
-    // InternalTqcl.g:3291:1: rule__XFunctionTypeRef__ParamTypesAssignment_0_1_1_1 : ( ruleJvmTypeReference ) ;
+    // InternalTqcl.g:3306:1: rule__XFunctionTypeRef__ParamTypesAssignment_0_1_1_1 : ( ruleJvmTypeReference ) ;
     public final void rule__XFunctionTypeRef__ParamTypesAssignment_0_1_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTqcl.g:3295:1: ( ( ruleJvmTypeReference ) )
-            // InternalTqcl.g:3296:2: ( ruleJvmTypeReference )
+            // InternalTqcl.g:3310:1: ( ( ruleJvmTypeReference ) )
+            // InternalTqcl.g:3311:2: ( ruleJvmTypeReference )
             {
-            // InternalTqcl.g:3296:2: ( ruleJvmTypeReference )
-            // InternalTqcl.g:3297:3: ruleJvmTypeReference
+            // InternalTqcl.g:3311:2: ( ruleJvmTypeReference )
+            // InternalTqcl.g:3312:3: ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXFunctionTypeRefAccess().getParamTypesJvmTypeReferenceParserRuleCall_0_1_1_1_0()); 
@@ -10749,17 +10800,17 @@ public class InternalTqclParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XFunctionTypeRef__ReturnTypeAssignment_2"
-    // InternalTqcl.g:3306:1: rule__XFunctionTypeRef__ReturnTypeAssignment_2 : ( ruleJvmTypeReference ) ;
+    // InternalTqcl.g:3321:1: rule__XFunctionTypeRef__ReturnTypeAssignment_2 : ( ruleJvmTypeReference ) ;
     public final void rule__XFunctionTypeRef__ReturnTypeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTqcl.g:3310:1: ( ( ruleJvmTypeReference ) )
-            // InternalTqcl.g:3311:2: ( ruleJvmTypeReference )
+            // InternalTqcl.g:3325:1: ( ( ruleJvmTypeReference ) )
+            // InternalTqcl.g:3326:2: ( ruleJvmTypeReference )
             {
-            // InternalTqcl.g:3311:2: ( ruleJvmTypeReference )
-            // InternalTqcl.g:3312:3: ruleJvmTypeReference
+            // InternalTqcl.g:3326:2: ( ruleJvmTypeReference )
+            // InternalTqcl.g:3327:3: ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXFunctionTypeRefAccess().getReturnTypeJvmTypeReferenceParserRuleCall_2_0()); 
@@ -10794,23 +10845,23 @@ public class InternalTqclParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JvmParameterizedTypeReference__TypeAssignment_0"
-    // InternalTqcl.g:3321:1: rule__JvmParameterizedTypeReference__TypeAssignment_0 : ( ( ruleQualifiedName ) ) ;
+    // InternalTqcl.g:3336:1: rule__JvmParameterizedTypeReference__TypeAssignment_0 : ( ( ruleQualifiedName ) ) ;
     public final void rule__JvmParameterizedTypeReference__TypeAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTqcl.g:3325:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalTqcl.g:3326:2: ( ( ruleQualifiedName ) )
+            // InternalTqcl.g:3340:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalTqcl.g:3341:2: ( ( ruleQualifiedName ) )
             {
-            // InternalTqcl.g:3326:2: ( ( ruleQualifiedName ) )
-            // InternalTqcl.g:3327:3: ( ruleQualifiedName )
+            // InternalTqcl.g:3341:2: ( ( ruleQualifiedName ) )
+            // InternalTqcl.g:3342:3: ( ruleQualifiedName )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmParameterizedTypeReferenceAccess().getTypeJvmTypeCrossReference_0_0()); 
             }
-            // InternalTqcl.g:3328:3: ( ruleQualifiedName )
-            // InternalTqcl.g:3329:4: ruleQualifiedName
+            // InternalTqcl.g:3343:3: ( ruleQualifiedName )
+            // InternalTqcl.g:3344:4: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmParameterizedTypeReferenceAccess().getTypeJvmTypeQualifiedNameParserRuleCall_0_0_1()); 
@@ -10851,17 +10902,17 @@ public class InternalTqclParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_1"
-    // InternalTqcl.g:3340:1: rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_1 : ( ruleJvmArgumentTypeReference ) ;
+    // InternalTqcl.g:3355:1: rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_1 : ( ruleJvmArgumentTypeReference ) ;
     public final void rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTqcl.g:3344:1: ( ( ruleJvmArgumentTypeReference ) )
-            // InternalTqcl.g:3345:2: ( ruleJvmArgumentTypeReference )
+            // InternalTqcl.g:3359:1: ( ( ruleJvmArgumentTypeReference ) )
+            // InternalTqcl.g:3360:2: ( ruleJvmArgumentTypeReference )
             {
-            // InternalTqcl.g:3345:2: ( ruleJvmArgumentTypeReference )
-            // InternalTqcl.g:3346:3: ruleJvmArgumentTypeReference
+            // InternalTqcl.g:3360:2: ( ruleJvmArgumentTypeReference )
+            // InternalTqcl.g:3361:3: ruleJvmArgumentTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmParameterizedTypeReferenceAccess().getArgumentsJvmArgumentTypeReferenceParserRuleCall_1_1_0()); 
@@ -10896,17 +10947,17 @@ public class InternalTqclParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_1"
-    // InternalTqcl.g:3355:1: rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_1 : ( ruleJvmArgumentTypeReference ) ;
+    // InternalTqcl.g:3370:1: rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_1 : ( ruleJvmArgumentTypeReference ) ;
     public final void rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTqcl.g:3359:1: ( ( ruleJvmArgumentTypeReference ) )
-            // InternalTqcl.g:3360:2: ( ruleJvmArgumentTypeReference )
+            // InternalTqcl.g:3374:1: ( ( ruleJvmArgumentTypeReference ) )
+            // InternalTqcl.g:3375:2: ( ruleJvmArgumentTypeReference )
             {
-            // InternalTqcl.g:3360:2: ( ruleJvmArgumentTypeReference )
-            // InternalTqcl.g:3361:3: ruleJvmArgumentTypeReference
+            // InternalTqcl.g:3375:2: ( ruleJvmArgumentTypeReference )
+            // InternalTqcl.g:3376:3: ruleJvmArgumentTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmParameterizedTypeReferenceAccess().getArgumentsJvmArgumentTypeReferenceParserRuleCall_1_2_1_0()); 
@@ -10941,23 +10992,23 @@ public class InternalTqclParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JvmParameterizedTypeReference__TypeAssignment_1_4_1"
-    // InternalTqcl.g:3370:1: rule__JvmParameterizedTypeReference__TypeAssignment_1_4_1 : ( ( ruleValidID ) ) ;
+    // InternalTqcl.g:3385:1: rule__JvmParameterizedTypeReference__TypeAssignment_1_4_1 : ( ( ruleValidID ) ) ;
     public final void rule__JvmParameterizedTypeReference__TypeAssignment_1_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTqcl.g:3374:1: ( ( ( ruleValidID ) ) )
-            // InternalTqcl.g:3375:2: ( ( ruleValidID ) )
+            // InternalTqcl.g:3389:1: ( ( ( ruleValidID ) ) )
+            // InternalTqcl.g:3390:2: ( ( ruleValidID ) )
             {
-            // InternalTqcl.g:3375:2: ( ( ruleValidID ) )
-            // InternalTqcl.g:3376:3: ( ruleValidID )
+            // InternalTqcl.g:3390:2: ( ( ruleValidID ) )
+            // InternalTqcl.g:3391:3: ( ruleValidID )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmParameterizedTypeReferenceAccess().getTypeJvmTypeCrossReference_1_4_1_0()); 
             }
-            // InternalTqcl.g:3377:3: ( ruleValidID )
-            // InternalTqcl.g:3378:4: ruleValidID
+            // InternalTqcl.g:3392:3: ( ruleValidID )
+            // InternalTqcl.g:3393:4: ruleValidID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmParameterizedTypeReferenceAccess().getTypeJvmTypeValidIDParserRuleCall_1_4_1_0_1()); 
@@ -10998,17 +11049,17 @@ public class InternalTqclParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_4_2_1"
-    // InternalTqcl.g:3389:1: rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_4_2_1 : ( ruleJvmArgumentTypeReference ) ;
+    // InternalTqcl.g:3404:1: rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_4_2_1 : ( ruleJvmArgumentTypeReference ) ;
     public final void rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_4_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTqcl.g:3393:1: ( ( ruleJvmArgumentTypeReference ) )
-            // InternalTqcl.g:3394:2: ( ruleJvmArgumentTypeReference )
+            // InternalTqcl.g:3408:1: ( ( ruleJvmArgumentTypeReference ) )
+            // InternalTqcl.g:3409:2: ( ruleJvmArgumentTypeReference )
             {
-            // InternalTqcl.g:3394:2: ( ruleJvmArgumentTypeReference )
-            // InternalTqcl.g:3395:3: ruleJvmArgumentTypeReference
+            // InternalTqcl.g:3409:2: ( ruleJvmArgumentTypeReference )
+            // InternalTqcl.g:3410:3: ruleJvmArgumentTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmParameterizedTypeReferenceAccess().getArgumentsJvmArgumentTypeReferenceParserRuleCall_1_4_2_1_0()); 
@@ -11043,17 +11094,17 @@ public class InternalTqclParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_4_2_2_1"
-    // InternalTqcl.g:3404:1: rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_4_2_2_1 : ( ruleJvmArgumentTypeReference ) ;
+    // InternalTqcl.g:3419:1: rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_4_2_2_1 : ( ruleJvmArgumentTypeReference ) ;
     public final void rule__JvmParameterizedTypeReference__ArgumentsAssignment_1_4_2_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTqcl.g:3408:1: ( ( ruleJvmArgumentTypeReference ) )
-            // InternalTqcl.g:3409:2: ( ruleJvmArgumentTypeReference )
+            // InternalTqcl.g:3423:1: ( ( ruleJvmArgumentTypeReference ) )
+            // InternalTqcl.g:3424:2: ( ruleJvmArgumentTypeReference )
             {
-            // InternalTqcl.g:3409:2: ( ruleJvmArgumentTypeReference )
-            // InternalTqcl.g:3410:3: ruleJvmArgumentTypeReference
+            // InternalTqcl.g:3424:2: ( ruleJvmArgumentTypeReference )
+            // InternalTqcl.g:3425:3: ruleJvmArgumentTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmParameterizedTypeReferenceAccess().getArgumentsJvmArgumentTypeReferenceParserRuleCall_1_4_2_2_1_0()); 
@@ -11088,17 +11139,17 @@ public class InternalTqclParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JvmWildcardTypeReference__ConstraintsAssignment_2_0_0"
-    // InternalTqcl.g:3419:1: rule__JvmWildcardTypeReference__ConstraintsAssignment_2_0_0 : ( ruleJvmUpperBound ) ;
+    // InternalTqcl.g:3434:1: rule__JvmWildcardTypeReference__ConstraintsAssignment_2_0_0 : ( ruleJvmUpperBound ) ;
     public final void rule__JvmWildcardTypeReference__ConstraintsAssignment_2_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTqcl.g:3423:1: ( ( ruleJvmUpperBound ) )
-            // InternalTqcl.g:3424:2: ( ruleJvmUpperBound )
+            // InternalTqcl.g:3438:1: ( ( ruleJvmUpperBound ) )
+            // InternalTqcl.g:3439:2: ( ruleJvmUpperBound )
             {
-            // InternalTqcl.g:3424:2: ( ruleJvmUpperBound )
-            // InternalTqcl.g:3425:3: ruleJvmUpperBound
+            // InternalTqcl.g:3439:2: ( ruleJvmUpperBound )
+            // InternalTqcl.g:3440:3: ruleJvmUpperBound
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmWildcardTypeReferenceAccess().getConstraintsJvmUpperBoundParserRuleCall_2_0_0_0()); 
@@ -11133,17 +11184,17 @@ public class InternalTqclParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JvmWildcardTypeReference__ConstraintsAssignment_2_0_1"
-    // InternalTqcl.g:3434:1: rule__JvmWildcardTypeReference__ConstraintsAssignment_2_0_1 : ( ruleJvmUpperBoundAnded ) ;
+    // InternalTqcl.g:3449:1: rule__JvmWildcardTypeReference__ConstraintsAssignment_2_0_1 : ( ruleJvmUpperBoundAnded ) ;
     public final void rule__JvmWildcardTypeReference__ConstraintsAssignment_2_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTqcl.g:3438:1: ( ( ruleJvmUpperBoundAnded ) )
-            // InternalTqcl.g:3439:2: ( ruleJvmUpperBoundAnded )
+            // InternalTqcl.g:3453:1: ( ( ruleJvmUpperBoundAnded ) )
+            // InternalTqcl.g:3454:2: ( ruleJvmUpperBoundAnded )
             {
-            // InternalTqcl.g:3439:2: ( ruleJvmUpperBoundAnded )
-            // InternalTqcl.g:3440:3: ruleJvmUpperBoundAnded
+            // InternalTqcl.g:3454:2: ( ruleJvmUpperBoundAnded )
+            // InternalTqcl.g:3455:3: ruleJvmUpperBoundAnded
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmWildcardTypeReferenceAccess().getConstraintsJvmUpperBoundAndedParserRuleCall_2_0_1_0()); 
@@ -11178,17 +11229,17 @@ public class InternalTqclParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JvmWildcardTypeReference__ConstraintsAssignment_2_1_0"
-    // InternalTqcl.g:3449:1: rule__JvmWildcardTypeReference__ConstraintsAssignment_2_1_0 : ( ruleJvmLowerBound ) ;
+    // InternalTqcl.g:3464:1: rule__JvmWildcardTypeReference__ConstraintsAssignment_2_1_0 : ( ruleJvmLowerBound ) ;
     public final void rule__JvmWildcardTypeReference__ConstraintsAssignment_2_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTqcl.g:3453:1: ( ( ruleJvmLowerBound ) )
-            // InternalTqcl.g:3454:2: ( ruleJvmLowerBound )
+            // InternalTqcl.g:3468:1: ( ( ruleJvmLowerBound ) )
+            // InternalTqcl.g:3469:2: ( ruleJvmLowerBound )
             {
-            // InternalTqcl.g:3454:2: ( ruleJvmLowerBound )
-            // InternalTqcl.g:3455:3: ruleJvmLowerBound
+            // InternalTqcl.g:3469:2: ( ruleJvmLowerBound )
+            // InternalTqcl.g:3470:3: ruleJvmLowerBound
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmWildcardTypeReferenceAccess().getConstraintsJvmLowerBoundParserRuleCall_2_1_0_0()); 
@@ -11223,17 +11274,17 @@ public class InternalTqclParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JvmWildcardTypeReference__ConstraintsAssignment_2_1_1"
-    // InternalTqcl.g:3464:1: rule__JvmWildcardTypeReference__ConstraintsAssignment_2_1_1 : ( ruleJvmLowerBoundAnded ) ;
+    // InternalTqcl.g:3479:1: rule__JvmWildcardTypeReference__ConstraintsAssignment_2_1_1 : ( ruleJvmLowerBoundAnded ) ;
     public final void rule__JvmWildcardTypeReference__ConstraintsAssignment_2_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTqcl.g:3468:1: ( ( ruleJvmLowerBoundAnded ) )
-            // InternalTqcl.g:3469:2: ( ruleJvmLowerBoundAnded )
+            // InternalTqcl.g:3483:1: ( ( ruleJvmLowerBoundAnded ) )
+            // InternalTqcl.g:3484:2: ( ruleJvmLowerBoundAnded )
             {
-            // InternalTqcl.g:3469:2: ( ruleJvmLowerBoundAnded )
-            // InternalTqcl.g:3470:3: ruleJvmLowerBoundAnded
+            // InternalTqcl.g:3484:2: ( ruleJvmLowerBoundAnded )
+            // InternalTqcl.g:3485:3: ruleJvmLowerBoundAnded
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmWildcardTypeReferenceAccess().getConstraintsJvmLowerBoundAndedParserRuleCall_2_1_1_0()); 
@@ -11268,17 +11319,17 @@ public class InternalTqclParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JvmUpperBound__TypeReferenceAssignment_1"
-    // InternalTqcl.g:3479:1: rule__JvmUpperBound__TypeReferenceAssignment_1 : ( ruleJvmTypeReference ) ;
+    // InternalTqcl.g:3494:1: rule__JvmUpperBound__TypeReferenceAssignment_1 : ( ruleJvmTypeReference ) ;
     public final void rule__JvmUpperBound__TypeReferenceAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTqcl.g:3483:1: ( ( ruleJvmTypeReference ) )
-            // InternalTqcl.g:3484:2: ( ruleJvmTypeReference )
+            // InternalTqcl.g:3498:1: ( ( ruleJvmTypeReference ) )
+            // InternalTqcl.g:3499:2: ( ruleJvmTypeReference )
             {
-            // InternalTqcl.g:3484:2: ( ruleJvmTypeReference )
-            // InternalTqcl.g:3485:3: ruleJvmTypeReference
+            // InternalTqcl.g:3499:2: ( ruleJvmTypeReference )
+            // InternalTqcl.g:3500:3: ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmUpperBoundAccess().getTypeReferenceJvmTypeReferenceParserRuleCall_1_0()); 
@@ -11313,17 +11364,17 @@ public class InternalTqclParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JvmUpperBoundAnded__TypeReferenceAssignment_1"
-    // InternalTqcl.g:3494:1: rule__JvmUpperBoundAnded__TypeReferenceAssignment_1 : ( ruleJvmTypeReference ) ;
+    // InternalTqcl.g:3509:1: rule__JvmUpperBoundAnded__TypeReferenceAssignment_1 : ( ruleJvmTypeReference ) ;
     public final void rule__JvmUpperBoundAnded__TypeReferenceAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTqcl.g:3498:1: ( ( ruleJvmTypeReference ) )
-            // InternalTqcl.g:3499:2: ( ruleJvmTypeReference )
+            // InternalTqcl.g:3513:1: ( ( ruleJvmTypeReference ) )
+            // InternalTqcl.g:3514:2: ( ruleJvmTypeReference )
             {
-            // InternalTqcl.g:3499:2: ( ruleJvmTypeReference )
-            // InternalTqcl.g:3500:3: ruleJvmTypeReference
+            // InternalTqcl.g:3514:2: ( ruleJvmTypeReference )
+            // InternalTqcl.g:3515:3: ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmUpperBoundAndedAccess().getTypeReferenceJvmTypeReferenceParserRuleCall_1_0()); 
@@ -11358,17 +11409,17 @@ public class InternalTqclParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JvmLowerBound__TypeReferenceAssignment_1"
-    // InternalTqcl.g:3509:1: rule__JvmLowerBound__TypeReferenceAssignment_1 : ( ruleJvmTypeReference ) ;
+    // InternalTqcl.g:3524:1: rule__JvmLowerBound__TypeReferenceAssignment_1 : ( ruleJvmTypeReference ) ;
     public final void rule__JvmLowerBound__TypeReferenceAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTqcl.g:3513:1: ( ( ruleJvmTypeReference ) )
-            // InternalTqcl.g:3514:2: ( ruleJvmTypeReference )
+            // InternalTqcl.g:3528:1: ( ( ruleJvmTypeReference ) )
+            // InternalTqcl.g:3529:2: ( ruleJvmTypeReference )
             {
-            // InternalTqcl.g:3514:2: ( ruleJvmTypeReference )
-            // InternalTqcl.g:3515:3: ruleJvmTypeReference
+            // InternalTqcl.g:3529:2: ( ruleJvmTypeReference )
+            // InternalTqcl.g:3530:3: ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmLowerBoundAccess().getTypeReferenceJvmTypeReferenceParserRuleCall_1_0()); 
@@ -11403,17 +11454,17 @@ public class InternalTqclParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JvmLowerBoundAnded__TypeReferenceAssignment_1"
-    // InternalTqcl.g:3524:1: rule__JvmLowerBoundAnded__TypeReferenceAssignment_1 : ( ruleJvmTypeReference ) ;
+    // InternalTqcl.g:3539:1: rule__JvmLowerBoundAnded__TypeReferenceAssignment_1 : ( ruleJvmTypeReference ) ;
     public final void rule__JvmLowerBoundAnded__TypeReferenceAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTqcl.g:3528:1: ( ( ruleJvmTypeReference ) )
-            // InternalTqcl.g:3529:2: ( ruleJvmTypeReference )
+            // InternalTqcl.g:3543:1: ( ( ruleJvmTypeReference ) )
+            // InternalTqcl.g:3544:2: ( ruleJvmTypeReference )
             {
-            // InternalTqcl.g:3529:2: ( ruleJvmTypeReference )
-            // InternalTqcl.g:3530:3: ruleJvmTypeReference
+            // InternalTqcl.g:3544:2: ( ruleJvmTypeReference )
+            // InternalTqcl.g:3545:3: ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getJvmLowerBoundAndedAccess().getTypeReferenceJvmTypeReferenceParserRuleCall_1_0()); 
@@ -11448,23 +11499,23 @@ public class InternalTqclParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XImportDeclaration__StaticAssignment_1_0_0"
-    // InternalTqcl.g:3539:1: rule__XImportDeclaration__StaticAssignment_1_0_0 : ( ( 'static' ) ) ;
+    // InternalTqcl.g:3554:1: rule__XImportDeclaration__StaticAssignment_1_0_0 : ( ( 'static' ) ) ;
     public final void rule__XImportDeclaration__StaticAssignment_1_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTqcl.g:3543:1: ( ( ( 'static' ) ) )
-            // InternalTqcl.g:3544:2: ( ( 'static' ) )
+            // InternalTqcl.g:3558:1: ( ( ( 'static' ) ) )
+            // InternalTqcl.g:3559:2: ( ( 'static' ) )
             {
-            // InternalTqcl.g:3544:2: ( ( 'static' ) )
-            // InternalTqcl.g:3545:3: ( 'static' )
+            // InternalTqcl.g:3559:2: ( ( 'static' ) )
+            // InternalTqcl.g:3560:3: ( 'static' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXImportDeclarationAccess().getStaticStaticKeyword_1_0_0_0()); 
             }
-            // InternalTqcl.g:3546:3: ( 'static' )
-            // InternalTqcl.g:3547:4: 'static'
+            // InternalTqcl.g:3561:3: ( 'static' )
+            // InternalTqcl.g:3562:4: 'static'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXImportDeclarationAccess().getStaticStaticKeyword_1_0_0_0()); 
@@ -11501,23 +11552,23 @@ public class InternalTqclParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XImportDeclaration__ExtensionAssignment_1_0_1"
-    // InternalTqcl.g:3558:1: rule__XImportDeclaration__ExtensionAssignment_1_0_1 : ( ( 'extension' ) ) ;
+    // InternalTqcl.g:3573:1: rule__XImportDeclaration__ExtensionAssignment_1_0_1 : ( ( 'extension' ) ) ;
     public final void rule__XImportDeclaration__ExtensionAssignment_1_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTqcl.g:3562:1: ( ( ( 'extension' ) ) )
-            // InternalTqcl.g:3563:2: ( ( 'extension' ) )
+            // InternalTqcl.g:3577:1: ( ( ( 'extension' ) ) )
+            // InternalTqcl.g:3578:2: ( ( 'extension' ) )
             {
-            // InternalTqcl.g:3563:2: ( ( 'extension' ) )
-            // InternalTqcl.g:3564:3: ( 'extension' )
+            // InternalTqcl.g:3578:2: ( ( 'extension' ) )
+            // InternalTqcl.g:3579:3: ( 'extension' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXImportDeclarationAccess().getExtensionExtensionKeyword_1_0_1_0()); 
             }
-            // InternalTqcl.g:3565:3: ( 'extension' )
-            // InternalTqcl.g:3566:4: 'extension'
+            // InternalTqcl.g:3580:3: ( 'extension' )
+            // InternalTqcl.g:3581:4: 'extension'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXImportDeclarationAccess().getExtensionExtensionKeyword_1_0_1_0()); 
@@ -11554,23 +11605,23 @@ public class InternalTqclParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XImportDeclaration__ImportedTypeAssignment_1_0_2"
-    // InternalTqcl.g:3577:1: rule__XImportDeclaration__ImportedTypeAssignment_1_0_2 : ( ( ruleQualifiedNameInStaticImport ) ) ;
+    // InternalTqcl.g:3592:1: rule__XImportDeclaration__ImportedTypeAssignment_1_0_2 : ( ( ruleQualifiedNameInStaticImport ) ) ;
     public final void rule__XImportDeclaration__ImportedTypeAssignment_1_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTqcl.g:3581:1: ( ( ( ruleQualifiedNameInStaticImport ) ) )
-            // InternalTqcl.g:3582:2: ( ( ruleQualifiedNameInStaticImport ) )
+            // InternalTqcl.g:3596:1: ( ( ( ruleQualifiedNameInStaticImport ) ) )
+            // InternalTqcl.g:3597:2: ( ( ruleQualifiedNameInStaticImport ) )
             {
-            // InternalTqcl.g:3582:2: ( ( ruleQualifiedNameInStaticImport ) )
-            // InternalTqcl.g:3583:3: ( ruleQualifiedNameInStaticImport )
+            // InternalTqcl.g:3597:2: ( ( ruleQualifiedNameInStaticImport ) )
+            // InternalTqcl.g:3598:3: ( ruleQualifiedNameInStaticImport )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXImportDeclarationAccess().getImportedTypeJvmDeclaredTypeCrossReference_1_0_2_0()); 
             }
-            // InternalTqcl.g:3584:3: ( ruleQualifiedNameInStaticImport )
-            // InternalTqcl.g:3585:4: ruleQualifiedNameInStaticImport
+            // InternalTqcl.g:3599:3: ( ruleQualifiedNameInStaticImport )
+            // InternalTqcl.g:3600:4: ruleQualifiedNameInStaticImport
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXImportDeclarationAccess().getImportedTypeJvmDeclaredTypeQualifiedNameInStaticImportParserRuleCall_1_0_2_0_1()); 
@@ -11611,23 +11662,23 @@ public class InternalTqclParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XImportDeclaration__WildcardAssignment_1_0_3_0"
-    // InternalTqcl.g:3596:1: rule__XImportDeclaration__WildcardAssignment_1_0_3_0 : ( ( '*' ) ) ;
+    // InternalTqcl.g:3611:1: rule__XImportDeclaration__WildcardAssignment_1_0_3_0 : ( ( '*' ) ) ;
     public final void rule__XImportDeclaration__WildcardAssignment_1_0_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTqcl.g:3600:1: ( ( ( '*' ) ) )
-            // InternalTqcl.g:3601:2: ( ( '*' ) )
+            // InternalTqcl.g:3615:1: ( ( ( '*' ) ) )
+            // InternalTqcl.g:3616:2: ( ( '*' ) )
             {
-            // InternalTqcl.g:3601:2: ( ( '*' ) )
-            // InternalTqcl.g:3602:3: ( '*' )
+            // InternalTqcl.g:3616:2: ( ( '*' ) )
+            // InternalTqcl.g:3617:3: ( '*' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXImportDeclarationAccess().getWildcardAsteriskKeyword_1_0_3_0_0()); 
             }
-            // InternalTqcl.g:3603:3: ( '*' )
-            // InternalTqcl.g:3604:4: '*'
+            // InternalTqcl.g:3618:3: ( '*' )
+            // InternalTqcl.g:3619:4: '*'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXImportDeclarationAccess().getWildcardAsteriskKeyword_1_0_3_0_0()); 
@@ -11664,17 +11715,17 @@ public class InternalTqclParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XImportDeclaration__MemberNameAssignment_1_0_3_1"
-    // InternalTqcl.g:3615:1: rule__XImportDeclaration__MemberNameAssignment_1_0_3_1 : ( ruleValidID ) ;
+    // InternalTqcl.g:3630:1: rule__XImportDeclaration__MemberNameAssignment_1_0_3_1 : ( ruleValidID ) ;
     public final void rule__XImportDeclaration__MemberNameAssignment_1_0_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTqcl.g:3619:1: ( ( ruleValidID ) )
-            // InternalTqcl.g:3620:2: ( ruleValidID )
+            // InternalTqcl.g:3634:1: ( ( ruleValidID ) )
+            // InternalTqcl.g:3635:2: ( ruleValidID )
             {
-            // InternalTqcl.g:3620:2: ( ruleValidID )
-            // InternalTqcl.g:3621:3: ruleValidID
+            // InternalTqcl.g:3635:2: ( ruleValidID )
+            // InternalTqcl.g:3636:3: ruleValidID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXImportDeclarationAccess().getMemberNameValidIDParserRuleCall_1_0_3_1_0()); 
@@ -11709,23 +11760,23 @@ public class InternalTqclParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XImportDeclaration__ImportedTypeAssignment_1_1"
-    // InternalTqcl.g:3630:1: rule__XImportDeclaration__ImportedTypeAssignment_1_1 : ( ( ruleQualifiedName ) ) ;
+    // InternalTqcl.g:3645:1: rule__XImportDeclaration__ImportedTypeAssignment_1_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__XImportDeclaration__ImportedTypeAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTqcl.g:3634:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalTqcl.g:3635:2: ( ( ruleQualifiedName ) )
+            // InternalTqcl.g:3649:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalTqcl.g:3650:2: ( ( ruleQualifiedName ) )
             {
-            // InternalTqcl.g:3635:2: ( ( ruleQualifiedName ) )
-            // InternalTqcl.g:3636:3: ( ruleQualifiedName )
+            // InternalTqcl.g:3650:2: ( ( ruleQualifiedName ) )
+            // InternalTqcl.g:3651:3: ( ruleQualifiedName )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXImportDeclarationAccess().getImportedTypeJvmDeclaredTypeCrossReference_1_1_0()); 
             }
-            // InternalTqcl.g:3637:3: ( ruleQualifiedName )
-            // InternalTqcl.g:3638:4: ruleQualifiedName
+            // InternalTqcl.g:3652:3: ( ruleQualifiedName )
+            // InternalTqcl.g:3653:4: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXImportDeclarationAccess().getImportedTypeJvmDeclaredTypeQualifiedNameParserRuleCall_1_1_0_1()); 
@@ -11766,17 +11817,17 @@ public class InternalTqclParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__XImportDeclaration__ImportedNamespaceAssignment_1_2"
-    // InternalTqcl.g:3649:1: rule__XImportDeclaration__ImportedNamespaceAssignment_1_2 : ( ruleQualifiedNameWithWildcard ) ;
+    // InternalTqcl.g:3664:1: rule__XImportDeclaration__ImportedNamespaceAssignment_1_2 : ( ruleQualifiedNameWithWildcard ) ;
     public final void rule__XImportDeclaration__ImportedNamespaceAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTqcl.g:3653:1: ( ( ruleQualifiedNameWithWildcard ) )
-            // InternalTqcl.g:3654:2: ( ruleQualifiedNameWithWildcard )
+            // InternalTqcl.g:3668:1: ( ( ruleQualifiedNameWithWildcard ) )
+            // InternalTqcl.g:3669:2: ( ruleQualifiedNameWithWildcard )
             {
-            // InternalTqcl.g:3654:2: ( ruleQualifiedNameWithWildcard )
-            // InternalTqcl.g:3655:3: ruleQualifiedNameWithWildcard
+            // InternalTqcl.g:3669:2: ( ruleQualifiedNameWithWildcard )
+            // InternalTqcl.g:3670:3: ruleQualifiedNameWithWildcard
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXImportDeclarationAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_2_0()); 
@@ -11814,19 +11865,19 @@ public class InternalTqclParser extends AbstractInternalContentAssistParser {
 
     protected DFA8 dfa8 = new DFA8(this);
     static final String dfa_1s = "\7\uffff";
-    static final String dfa_2s = "\2\uffff\1\4\3\uffff\1\4";
-    static final String dfa_3s = "\1\4\1\uffff\1\12\1\4\2\uffff\1\12";
-    static final String dfa_4s = "\1\40\1\uffff\1\31\1\36\2\uffff\1\31";
-    static final String dfa_5s = "\1\uffff\1\1\2\uffff\1\2\1\3\1\uffff";
+    static final String dfa_2s = "\2\uffff\1\4\2\uffff\1\4\1\uffff";
+    static final String dfa_3s = "\1\4\1\uffff\1\12\1\4\1\uffff\1\12\1\uffff";
+    static final String dfa_4s = "\1\40\1\uffff\1\31\1\36\1\uffff\1\31\1\uffff";
+    static final String dfa_5s = "\1\uffff\1\1\2\uffff\1\2\1\uffff\1\3";
     static final String dfa_6s = "\7\uffff}>";
     static final String[] dfa_7s = {
             "\1\2\33\uffff\1\1",
             "",
             "\1\4\16\uffff\1\3",
-            "\1\6\31\uffff\1\5",
+            "\1\5\31\uffff\1\6",
             "",
-            "",
-            "\1\4\16\uffff\1\3"
+            "\1\4\16\uffff\1\3",
+            ""
     };
 
     static final short[] dfa_1 = DFA.unpackEncodedString(dfa_1s);

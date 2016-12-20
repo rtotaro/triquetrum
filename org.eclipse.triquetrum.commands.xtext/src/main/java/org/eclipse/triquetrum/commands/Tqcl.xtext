@@ -13,7 +13,7 @@ Insert:
 	"insert" obj=NamedObj ("as" name=NamedObj)? ("with" parameters += (Parameter) ("," parameters+=Parameter)*)?;
 
 Parameter:
-	NamedObj "=" value=STRING;
+	id = NamedObj "=" value=STRING;
 
 
 NamedObj:

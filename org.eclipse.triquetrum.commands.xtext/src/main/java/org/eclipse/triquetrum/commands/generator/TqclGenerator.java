@@ -13,12 +13,16 @@
  */
 package org.eclipse.triquetrum.commands.generator;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.edit.command.SetCommand;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.graphiti.dt.IDiagramTypeProvider;
 import org.eclipse.graphiti.features.ICreateFeature;
@@ -36,12 +40,15 @@ import org.eclipse.triquetrum.commands.tqcl.Command;
 import org.eclipse.triquetrum.commands.tqcl.Connect;
 import org.eclipse.triquetrum.commands.tqcl.Insert;
 import org.eclipse.triquetrum.commands.tqcl.NamedObj;
+import org.eclipse.triquetrum.commands.tqcl.Parameter;
 import org.eclipse.triquetrum.commands.tqcl.TriquetrumScript;
 import org.eclipse.triquetrum.workflow.editor.TriqDiagramEditor;
 import org.eclipse.triquetrum.workflow.editor.TriqDiagramTypeProvider;
 import org.eclipse.triquetrum.workflow.editor.TriqFeatureProvider;
 import org.eclipse.triquetrum.workflow.editor.features.ConnectionCreateFeature;
 import org.eclipse.triquetrum.workflow.editor.features.ModelElementCreateFeature;
+import org.eclipse.triquetrum.workflow.model.Actor;
+import org.eclipse.triquetrum.workflow.model.CompositeActor;
 import org.eclipse.triquetrum.workflow.model.Port;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IEditorReference;
@@ -49,6 +56,11 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
+
+import ptolemy.actor.TypedAtomicActor;
+import ptolemy.kernel.util.AbstractSettableAttribute;
+import ptolemy.kernel.util.Attribute;
+import ptolemy.kernel.util.IllegalActionException;
 
 /**
  * Generates code from your model files on save.
@@ -88,6 +100,8 @@ public class TqclGenerator extends AbstractGenerator {
 		IFeatureProvider featureProvider = diagramTypeProvider.getFeatureProvider();
 		Diagram diagram = diagramTypeProvider.getDiagram();
 		
+		
+		
 		initFeatureMap(featureProvider);
 
 		EList<EObject> contents = resource.getContents();
@@ -103,31 +117,7 @@ public class TqclGenerator extends AbstractGenerator {
 					}
 					else if (command instanceof Connect) {
 						Connect connect = (Connect) command;
-						ConnectionCreateFeature feature = new ConnectionCreateFeature(featureProvider);
-						CreateConnectionContext createContext = new CreateConnectionContext();
-						EList<Shape> children = diagram.getChildren();
-						
-						for (Shape shape : children) {
-							EList<Anchor> anchors = shape.getAnchors();
-							for (Anchor anchor : anchors) {
-								EObject bo = Graphiti.getLinkService().getBusinessObjectForLinkedPictogramElement(anchor);
-								if (bo instanceof Port) {
-									Port port = (Port) bo;
-									String fullName = port.getFullName();
-									if(fullName.endsWith(connect.getFrom().getName()))
-									{
-										createContext.setSourceAnchor(anchor);
-									}
-									if(fullName.endsWith(connect.getTo().getName()))
-									{
-										createContext.setTargetAnchor(anchor);
-									}
-								}
-							}
-						}
-						
-						diagramBehavior.executeFeature(feature, createContext);
-						
+						createConnection(diagramBehavior, featureProvider, diagram, connect);
 					}
 
 				}
@@ -136,32 +126,81 @@ public class TqclGenerator extends AbstractGenerator {
 
 		}
 
-		// Iterator<Greeting> filtered =
-		// Iterators.filter(resource.getAllContents(), Greeting.class);
-		// Iterator<String> names = Iterators.transform(filtered, new
-		// Function<Greeting, String>() {
-		//
-		// @Override
-		// public String apply(Greeting greeting) {
-		// return greeting.getName();
-		// }
-		// });
-		// fsa.generateFile("greetings.txt", "People to greet: " +
-		// IteratorExtensions.join(names, ", "));
+	}
+
+	private void createConnection(DiagramBehavior diagramBehavior, IFeatureProvider featureProvider, Diagram diagram,
+			Connect connect) {
+		ConnectionCreateFeature feature = new ConnectionCreateFeature(featureProvider);
+		CreateConnectionContext createContext = new CreateConnectionContext();
+		EList<Shape> children = diagram.getChildren();
+		
+		for (Shape shape : children) {
+			EList<Anchor> anchors = shape.getAnchors();
+			for (Anchor anchor : anchors) {
+				EObject bo = Graphiti.getLinkService().getBusinessObjectForLinkedPictogramElement(anchor);
+				if (bo instanceof Port) {
+					Port port = (Port) bo;
+					String fullName = port.getFullName();
+					if(fullName.endsWith(connect.getFrom().getName()))
+					{
+						createContext.setSourceAnchor(anchor);
+					}
+					if(fullName.endsWith(connect.getTo().getName()))
+					{
+						createContext.setTargetAnchor(anchor);
+					}
+				}
+			}
+		}
+		
+		diagramBehavior.executeFeature(feature, createContext);
 	}
 
 	private void insertActor(DiagramBehavior diagramBehavior, Diagram diagram, Command command) {
 		Insert insert = (Insert) command;
-		NamedObj name = insert.getName();
-		AddContext addContext = new AddContext();
 		NamedObj obj = insert.getObj();
 		String paleteKey = obj.getName();
+		String actorInstanceName = insert.getName().getName();
+		
+		EList<Parameter> parameters = insert.getParameters();
+		
 
 		ModelElementCreateFeature modelElementCreateFeature = featuresMap
 				.get(paleteKey.replaceAll("\"", ""));
 		CreateContext createContext = new CreateContext();
 		createContext.setTargetContainer(diagram);
 		Object executeFeature = diagramBehavior.executeFeature(modelElementCreateFeature, createContext);
+		
+		
+		
+		EObject businessObjectForLinkedPictogramElement = Graphiti.getLinkService().getBusinessObjectForLinkedPictogramElement(diagram);
+		if (businessObjectForLinkedPictogramElement instanceof CompositeActor) {
+			CompositeActor mainActor = (CompositeActor) businessObjectForLinkedPictogramElement;
+			org.eclipse.triquetrum.workflow.model.NamedObj child = mainActor.getChild(modelElementCreateFeature.getCreateName());
+			TransactionalEditingDomain editingDomain = diagramBehavior.getEditingDomain();
+			if (child instanceof Actor) {
+				Actor actor = (Actor) child;
+				Map<String, org.eclipse.triquetrum.workflow.model.Parameter> modelParameters = new HashMap<>();
+				for (org.eclipse.triquetrum.workflow.model.Parameter parameter : actor.getParameters()) {
+					modelParameters.put(parameter.getName(), parameter);
+				}
+//				EStructuralFeature eStructuralFeatureName = actor.eClass().getEStructuralFeature("name");
+//				editingDomain.getCommandStack().execute(new SetCommand(editingDomain, actor, eStructuralFeatureName, actorInstanceName));
+				
+				for (Parameter parameter : parameters) {
+					String paramName = parameter.getId().getName();
+					org.eclipse.triquetrum.workflow.model.Parameter parameterToSet = modelParameters.get(paramName);
+					EStructuralFeature eStructuralFeatureExpression = parameterToSet.eClass().getEStructuralFeature("expression");
+					editingDomain.getCommandStack().execute(new SetCommand(editingDomain, parameterToSet,eStructuralFeatureExpression ,parameter.getValue()));
+				}
+				
+			}
+			
+		}
+		
+		
+		
+		System.out.println(executeFeature);
 	}
 
 	private void initFeatureMap(IFeatureProvider featureProvider) {

@@ -1104,9 +1104,9 @@ rule__Parameter__Group__0__Impl
 	}
 :
 (
-	{ before(grammarAccess.getParameterAccess().getNamedObjParserRuleCall_0()); }
-	ruleNamedObj
-	{ after(grammarAccess.getParameterAccess().getNamedObjParserRuleCall_0()); }
+	{ before(grammarAccess.getParameterAccess().getIdAssignment_0()); }
+	(rule__Parameter__IdAssignment_0)
+	{ after(grammarAccess.getParameterAccess().getIdAssignment_0()); }
 )
 ;
 finally {
@@ -3207,6 +3207,21 @@ rule__Insert__ParametersAssignment_3_2_1
 		{ before(grammarAccess.getInsertAccess().getParametersParameterParserRuleCall_3_2_1_0()); }
 		ruleParameter
 		{ after(grammarAccess.getInsertAccess().getParametersParameterParserRuleCall_3_2_1_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Parameter__IdAssignment_0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getParameterAccess().getIdNamedObjParserRuleCall_0_0()); }
+		ruleNamedObj
+		{ after(grammarAccess.getParameterAccess().getIdNamedObjParserRuleCall_0_0()); }
 	)
 ;
 finally {

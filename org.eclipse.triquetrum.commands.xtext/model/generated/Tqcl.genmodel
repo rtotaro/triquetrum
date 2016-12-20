@@ -15,9 +15,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Tqcl.ecore#//Insert/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Tqcl.ecore#//Insert/parameters"/>
     </genClasses>
-    <genClasses ecoreClass="Tqcl.ecore#//Parameter"/>
+    <genClasses ecoreClass="Tqcl.ecore#//Parameter">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Tqcl.ecore#//Parameter/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Tqcl.ecore#//Parameter/value"/>
+    </genClasses>
     <genClasses ecoreClass="Tqcl.ecore#//NamedObj">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Tqcl.ecore#//NamedObj/value"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Tqcl.ecore#//NamedObj/name"/>
     </genClasses>
     <genClasses ecoreClass="Tqcl.ecore#//Connect">

@@ -171,13 +171,31 @@ public interface TqclPackage extends EPackage
   int PARAMETER = 3;
 
   /**
+   * The feature id for the '<em><b>Id</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAMETER__ID = 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAMETER__VALUE = 1;
+
+  /**
    * The number of structural features of the '<em>Parameter</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PARAMETER_FEATURE_COUNT = 0;
+  int PARAMETER_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.eclipse.triquetrum.commands.tqcl.impl.NamedObjImpl <em>Named Obj</em>}' class.
@@ -190,22 +208,13 @@ public interface TqclPackage extends EPackage
   int NAMED_OBJ = 4;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NAMED_OBJ__VALUE = PARAMETER_FEATURE_COUNT + 0;
-
-  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NAMED_OBJ__NAME = PARAMETER_FEATURE_COUNT + 1;
+  int NAMED_OBJ__NAME = 0;
 
   /**
    * The number of structural features of the '<em>Named Obj</em>' class.
@@ -214,7 +223,7 @@ public interface TqclPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NAMED_OBJ_FEATURE_COUNT = PARAMETER_FEATURE_COUNT + 2;
+  int NAMED_OBJ_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.eclipse.triquetrum.commands.tqcl.impl.ConnectImpl <em>Connect</em>}' class.
@@ -339,6 +348,28 @@ public interface TqclPackage extends EPackage
   EClass getParameter();
 
   /**
+   * Returns the meta object for the containment reference '{@link org.eclipse.triquetrum.commands.tqcl.Parameter#getId <em>Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Id</em>'.
+   * @see org.eclipse.triquetrum.commands.tqcl.Parameter#getId()
+   * @see #getParameter()
+   * @generated
+   */
+  EReference getParameter_Id();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.eclipse.triquetrum.commands.tqcl.Parameter#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.eclipse.triquetrum.commands.tqcl.Parameter#getValue()
+   * @see #getParameter()
+   * @generated
+   */
+  EAttribute getParameter_Value();
+
+  /**
    * Returns the meta object for class '{@link org.eclipse.triquetrum.commands.tqcl.NamedObj <em>Named Obj</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -347,17 +378,6 @@ public interface TqclPackage extends EPackage
    * @generated
    */
   EClass getNamedObj();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.eclipse.triquetrum.commands.tqcl.NamedObj#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see org.eclipse.triquetrum.commands.tqcl.NamedObj#getValue()
-   * @see #getNamedObj()
-   * @generated
-   */
-  EAttribute getNamedObj_Value();
 
   /**
    * Returns the meta object for the attribute '{@link org.eclipse.triquetrum.commands.tqcl.NamedObj#getName <em>Name</em>}'.
@@ -498,6 +518,22 @@ public interface TqclPackage extends EPackage
     EClass PARAMETER = eINSTANCE.getParameter();
 
     /**
+     * The meta object literal for the '<em><b>Id</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PARAMETER__ID = eINSTANCE.getParameter_Id();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PARAMETER__VALUE = eINSTANCE.getParameter_Value();
+
+    /**
      * The meta object literal for the '{@link org.eclipse.triquetrum.commands.tqcl.impl.NamedObjImpl <em>Named Obj</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -506,14 +542,6 @@ public interface TqclPackage extends EPackage
      * @generated
      */
     EClass NAMED_OBJ = eINSTANCE.getNamedObj();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute NAMED_OBJ__VALUE = eINSTANCE.getNamedObj_Value();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.

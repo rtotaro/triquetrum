@@ -227,6 +227,26 @@ public class TqclPackageImpl extends EPackageImpl implements TqclPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getParameter_Id()
+  {
+    return (EReference)parameterEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getParameter_Value()
+  {
+    return (EAttribute)parameterEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getNamedObj()
   {
     return namedObjEClass;
@@ -237,19 +257,9 @@ public class TqclPackageImpl extends EPackageImpl implements TqclPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getNamedObj_Value()
-  {
-    return (EAttribute)namedObjEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EAttribute getNamedObj_Name()
   {
-    return (EAttribute)namedObjEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)namedObjEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -323,9 +333,10 @@ public class TqclPackageImpl extends EPackageImpl implements TqclPackage
     createEReference(insertEClass, INSERT__PARAMETERS);
 
     parameterEClass = createEClass(PARAMETER);
+    createEReference(parameterEClass, PARAMETER__ID);
+    createEAttribute(parameterEClass, PARAMETER__VALUE);
 
     namedObjEClass = createEClass(NAMED_OBJ);
-    createEAttribute(namedObjEClass, NAMED_OBJ__VALUE);
     createEAttribute(namedObjEClass, NAMED_OBJ__NAME);
 
     connectEClass = createEClass(CONNECT);
@@ -363,7 +374,6 @@ public class TqclPackageImpl extends EPackageImpl implements TqclPackage
 
     // Add supertypes to classes
     insertEClass.getESuperTypes().add(this.getCommand());
-    namedObjEClass.getESuperTypes().add(this.getParameter());
     connectEClass.getESuperTypes().add(this.getCommand());
 
     // Initialize classes and features; add operations and parameters
@@ -378,9 +388,10 @@ public class TqclPackageImpl extends EPackageImpl implements TqclPackage
     initEReference(getInsert_Parameters(), this.getParameter(), null, "parameters", null, 0, -1, Insert.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getParameter_Id(), this.getNamedObj(), null, "id", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getParameter_Value(), ecorePackage.getEString(), "value", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(namedObjEClass, NamedObj.class, "NamedObj", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getNamedObj_Value(), ecorePackage.getEString(), "value", null, 0, 1, NamedObj.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getNamedObj_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedObj.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(connectEClass, Connect.class, "Connect", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

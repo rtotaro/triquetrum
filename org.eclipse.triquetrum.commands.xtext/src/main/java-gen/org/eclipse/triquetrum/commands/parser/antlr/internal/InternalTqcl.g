@@ -271,14 +271,25 @@ ruleParameter returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		{
-			newCompositeNode(grammarAccess.getParameterAccess().getNamedObjParserRuleCall_0());
-		}
-		this_NamedObj_0=ruleNamedObj
-		{
-			$current = $this_NamedObj_0.current;
-			afterParserOrEnumRuleCall();
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getParameterAccess().getIdNamedObjParserRuleCall_0_0());
+				}
+				lv_id_0_0=ruleNamedObj
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getParameterRule());
+					}
+					set(
+						$current,
+						"id",
+						lv_id_0_0,
+						"org.eclipse.triquetrum.commands.Tqcl.NamedObj");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 		otherlv_1='='
 		{
 			newLeafNode(otherlv_1, grammarAccess.getParameterAccess().getEqualsSignKeyword_1());

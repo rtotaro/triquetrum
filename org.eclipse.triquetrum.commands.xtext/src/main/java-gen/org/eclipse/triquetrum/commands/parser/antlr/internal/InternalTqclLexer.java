@@ -563,10 +563,10 @@ public class InternalTqclLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTqcl.g:1412:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
-            // InternalTqcl.g:1412:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // InternalTqcl.g:1423:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
+            // InternalTqcl.g:1423:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             {
-            // InternalTqcl.g:1412:11: ( '^' )?
+            // InternalTqcl.g:1423:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -575,7 +575,7 @@ public class InternalTqclLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalTqcl.g:1412:11: '^'
+                    // InternalTqcl.g:1423:11: '^'
                     {
                     match('^'); 
 
@@ -593,7 +593,7 @@ public class InternalTqclLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalTqcl.g:1412:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // InternalTqcl.g:1423:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -642,10 +642,10 @@ public class InternalTqclLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTqcl.g:1414:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? ) )
-            // InternalTqcl.g:1414:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
+            // InternalTqcl.g:1425:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? ) )
+            // InternalTqcl.g:1425:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
             {
-            // InternalTqcl.g:1414:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
+            // InternalTqcl.g:1425:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -663,10 +663,10 @@ public class InternalTqclLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // InternalTqcl.g:1414:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )?
+                    // InternalTqcl.g:1425:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )?
                     {
                     match('\"'); 
-                    // InternalTqcl.g:1414:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalTqcl.g:1425:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop3:
                     do {
                         int alt3=3;
@@ -682,7 +682,7 @@ public class InternalTqclLexer extends Lexer {
 
                         switch (alt3) {
                     	case 1 :
-                    	    // InternalTqcl.g:1414:21: '\\\\' .
+                    	    // InternalTqcl.g:1425:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -690,7 +690,7 @@ public class InternalTqclLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalTqcl.g:1414:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalTqcl.g:1425:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -710,7 +710,7 @@ public class InternalTqclLexer extends Lexer {
                         }
                     } while (true);
 
-                    // InternalTqcl.g:1414:44: ( '\"' )?
+                    // InternalTqcl.g:1425:44: ( '\"' )?
                     int alt4=2;
                     int LA4_0 = input.LA(1);
 
@@ -719,7 +719,7 @@ public class InternalTqclLexer extends Lexer {
                     }
                     switch (alt4) {
                         case 1 :
-                            // InternalTqcl.g:1414:44: '\"'
+                            // InternalTqcl.g:1425:44: '\"'
                             {
                             match('\"'); 
 
@@ -732,10 +732,10 @@ public class InternalTqclLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalTqcl.g:1414:49: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )?
+                    // InternalTqcl.g:1425:49: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )?
                     {
                     match('\''); 
-                    // InternalTqcl.g:1414:54: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalTqcl.g:1425:54: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -751,7 +751,7 @@ public class InternalTqclLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalTqcl.g:1414:55: '\\\\' .
+                    	    // InternalTqcl.g:1425:55: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -759,7 +759,7 @@ public class InternalTqclLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalTqcl.g:1414:62: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalTqcl.g:1425:62: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -779,7 +779,7 @@ public class InternalTqclLexer extends Lexer {
                         }
                     } while (true);
 
-                    // InternalTqcl.g:1414:79: ( '\\'' )?
+                    // InternalTqcl.g:1425:79: ( '\\'' )?
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
@@ -788,7 +788,7 @@ public class InternalTqclLexer extends Lexer {
                     }
                     switch (alt6) {
                         case 1 :
-                            // InternalTqcl.g:1414:79: '\\''
+                            // InternalTqcl.g:1425:79: '\\''
                             {
                             match('\''); 
 
@@ -819,12 +819,12 @@ public class InternalTqclLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTqcl.g:1416:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalTqcl.g:1416:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalTqcl.g:1427:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalTqcl.g:1427:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalTqcl.g:1416:24: ( options {greedy=false; } : . )*
+            // InternalTqcl.g:1427:24: ( options {greedy=false; } : . )*
             loop8:
             do {
                 int alt8=2;
@@ -849,7 +849,7 @@ public class InternalTqclLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalTqcl.g:1416:52: .
+            	    // InternalTqcl.g:1427:52: .
             	    {
             	    matchAny(); 
 
@@ -879,12 +879,12 @@ public class InternalTqclLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTqcl.g:1418:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalTqcl.g:1418:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalTqcl.g:1429:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalTqcl.g:1429:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalTqcl.g:1418:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalTqcl.g:1429:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop9:
             do {
                 int alt9=2;
@@ -897,7 +897,7 @@ public class InternalTqclLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // InternalTqcl.g:1418:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalTqcl.g:1429:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -917,7 +917,7 @@ public class InternalTqclLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalTqcl.g:1418:40: ( ( '\\r' )? '\\n' )?
+            // InternalTqcl.g:1429:40: ( ( '\\r' )? '\\n' )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -926,9 +926,9 @@ public class InternalTqclLexer extends Lexer {
             }
             switch (alt11) {
                 case 1 :
-                    // InternalTqcl.g:1418:41: ( '\\r' )? '\\n'
+                    // InternalTqcl.g:1429:41: ( '\\r' )? '\\n'
                     {
-                    // InternalTqcl.g:1418:41: ( '\\r' )?
+                    // InternalTqcl.g:1429:41: ( '\\r' )?
                     int alt10=2;
                     int LA10_0 = input.LA(1);
 
@@ -937,7 +937,7 @@ public class InternalTqclLexer extends Lexer {
                     }
                     switch (alt10) {
                         case 1 :
-                            // InternalTqcl.g:1418:41: '\\r'
+                            // InternalTqcl.g:1429:41: '\\r'
                             {
                             match('\r'); 
 
@@ -969,10 +969,10 @@ public class InternalTqclLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTqcl.g:1420:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalTqcl.g:1420:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalTqcl.g:1431:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalTqcl.g:1431:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalTqcl.g:1420:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalTqcl.g:1431:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt12=0;
             loop12:
             do {
@@ -1026,8 +1026,8 @@ public class InternalTqclLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTqcl.g:1422:16: ( . )
-            // InternalTqcl.g:1422:18: .
+            // InternalTqcl.g:1433:16: ( . )
+            // InternalTqcl.g:1433:18: .
             {
             matchAny(); 
 
